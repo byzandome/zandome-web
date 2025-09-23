@@ -34,11 +34,18 @@ RUN bun run build
 # Production stage
 FROM nginx:alpine AS production
 
+# Install curl for health check
+RUN apk add --no-cache curl
+
 # Copy built files from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Copy nginx configuration if needed
 # COPY nginx.conf /etc/nginx/nginx.conf
+
+# Add health check to validate container is serving content
+HEALTHCHECK --interval=60s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:80/ || exit 1
 
 # Expose port
 EXPOSE 80
