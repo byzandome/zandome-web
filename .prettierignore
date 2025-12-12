@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build & dist
+dist/
+build/
+.astro/
+out/
+.vscode/
+.husky/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Version control
+.git/
+.gitignore
+.github
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Cache
+.cache/
+.eslintcache
+
+# Testing
+coverage/
+
+# Generated files
+.prettierignore
+.prettierrc
