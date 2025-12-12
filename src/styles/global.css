@@ -1,61 +1,224 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+/* ============================================================================
+   IMPORTS
+   ========================================================================= */
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
-/* Enable Dark Mode */
+/* ============================================================================
+   DARK MODE CONFIGURATION
+   ========================================================================= */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Configuration Theme */
+/* ============================================================================
+   CUSTOM THEME VARIABLES
+   ========================================================================= */
 @theme {
-  /* Bahama Blue (Primary) */
-  --color-bahama-blue-lightest: #e5f0f3;
-  --color-bahama-blue-lighter: #cce1e8;
-  --color-bahama-blue-light: #4e98b0;
-  --color-bahama-blue: #036c8f;
-  --color-bahama-blue-dark: #025672;
-  --color-bahama-blue-darker: #012b39;
-  --color-bahama-blue-darkest: #00202a;
+  /* Indigo (Primary Brand Color) */
+  --color-indigo-50: #eef2ff;
+  --color-indigo-100: #e0e7ff;
+  --color-indigo-200: #c7d2fe;
+  --color-indigo-300: #a5b4fc;
+  --color-indigo-400: #818cf8;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+  --color-indigo-800: #3730a3;
+  --color-indigo-900: #312e81;
+  --color-indigo-950: #1e1b4b;
 
-  /* Bondi Blue (Secondary) */
-  --color-bondi-blue-lightest: #ccecef;
-  --color-bondi-blue-lighter: #e5f5f7;
-  --color-bondi-blue-light: #4cbcc7;
-  --color-bondi-blue: #00a0af;
-  --color-bondi-blue-dark: #00808c;
-  --color-bondi-blue-darker: #004046;
-  --color-bondi-blue-darkest: #003034;
+  /* Neutral Colors */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
 
-  /* Java Blue (Ternary) */
-  --color-java-blue-lightest: #e8f9fa;
-  --color-java-blue-lighter: #d1f4f6;
-  --color-java-blue-light: #60d9e0;
-  --color-java-blue: #1dcad3;
-  --color-java-blue-dark: #17a1a8;
-  --color-java-blue-darker: #0b5054;
-  --color-java-blue-darkest: #083c3f;
+  /* Semantic Colors */
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-warning-400: #facc15;
+  --color-warning-500: #eab308;
+  --color-warning-600: #ca8a04;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-info-400: #38bdf8;
+  --color-info-500: #0ea5e9;
+  --color-info-600: #0284c7;
 
-  --color-background: var(--color-bahama-blue-darkest);
+  /* Background */
+  --color-background: var(--color-neutral-900);
 
-  /* Font Size to CV Export */
+  /* CV Export Font Sizes */
   --text-cv-title: 24px;
   --text-cv-title--line-height: 28px;
-
   --text-cv-subtitle: 13px;
   --text-cv-subtitle--line-height: 17px;
-
   --text-cv-body: 12px;
   --text-cv-body--line-height: 16px;
 
-  --font-display: 'Poppins', sans-serif;
-  --font-cv: 'STIX Two Text', serif;
+  /* Font Families */
+  --font-display: 'Space Grotesk Variable', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', monospace;
+  --font-cv: 'STIX Two Text Variable', serif;
 
+  /* Animations */
   --animate-logo-draw: logo-draw-stroke 2.5s linear 700ms both, logo-fill 2s ease-out 2s both;
 }
 
+/* ============================================================================
+   SHADCN UI THEME SYSTEM
+   ========================================================================= */
+
+/* Shadcn Color Mappings */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Light Mode Theme */
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+
+  /* Indigo Primary Colors */
+  --primary: oklch(0.49 0.22 274);
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+
+  /* Indigo Accent Colors */
+  --accent: oklch(0.56 0.21 274);
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.49 0.22 274);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  /* Sidebar with Indigo */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.49 0.22 274);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.49 0.22 274);
+}
+
+/* Dark Mode Theme */
+.dark {
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  /* Indigo Primary Colors - Lighter for dark mode */
+  --primary: oklch(0.64 0.19 274);
+  --primary-foreground: oklch(0.145 0 0);
+
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+
+  /* Indigo Accent Colors */
+  --accent: oklch(0.56 0.21 274);
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.64 0.19 274);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+
+  /* Sidebar with Indigo */
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.64 0.19 274);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.64 0.19 274);
+}
+
+/* ============================================================================
+   UTILITIES
+   ========================================================================= */
 @utility separator {
   @apply mx-2 text-gray-500 content-['|'] hover:underline;
 }
 
+/* ============================================================================
+   COMPONENTS
+   ========================================================================= */
 @layer components {
   .cv__contact {
     @apply flex flex-col items-center;
@@ -72,12 +235,16 @@
 
   section.cv__section {
     @apply flex flex-col gap-y-2 print:gap-1;
+
     .cv__section__title {
       @apply text-2xl font-semibold uppercase print:text-cv-subtitle print:font-bold;
     }
   }
 }
 
+/* ============================================================================
+   BASE STYLES
+   ========================================================================= */
 @layer base {
   html {
     -ms-text-size-adjust: 100%;
@@ -87,10 +254,11 @@
     height: 100vh;
     color-scheme: dark;
     background-color: var(--color-background);
-    @apply font-display;
+    @apply border-border font-display outline-ring/50;
   }
 
   body {
+    @apply bg-background text-foreground;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -110,6 +278,7 @@
     box-sizing: border-box;
   }
 
+  /* Scrollbar Styling */
   *::-webkit-scrollbar,
   *::-webkit-scrollbar-thumb {
     width: 15px;
@@ -123,7 +292,7 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    background: var(--color-bahama-blue-light);
+    background: var(--color-indigo-400);
     background-clip: padding-box !important;
   }
 
@@ -137,6 +306,9 @@
   }
 }
 
+/* ============================================================================
+   ANIMATIONS
+   ========================================================================= */
 @keyframes logo-draw-stroke {
   0% {
     stroke-opacity: 0;

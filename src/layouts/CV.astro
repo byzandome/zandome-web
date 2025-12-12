@@ -1,10 +1,17 @@
 ---
 import '@/styles/global.css';
+// Supports weights 400-700
+import '@fontsource-variable/stix-two-text/wght-italic.css';
+// Supports weights 300-700
+import '@fontsource-variable/space-grotesk';
+// Supports weights 100-800
+import '@fontsource-variable/jetbrains-mono';
 
-import { Header, Head, Button, Footer } from '@/components/shared';
+import { Header, Head, Footer } from '@/components/shared';
+import { Button } from '@/components/ui/button';
 ---
 
-<html lang="en" class="print:font-cv">
+<html lang="en" class="dark print:font-cv">
   <head>
     <Head title="Miguel Mendoza Curriculum" />
   </head>
@@ -16,9 +23,9 @@ import { Header, Head, Button, Footer } from '@/components/shared';
       <slot />
     </main>
     <div class="fixed right-5 bottom-5 print:hidden">
-      <Button id="btn:download:cv" href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-        Download CV
-      </Button>
+      <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" id="btn:download:cv">
+        <Button> Download CV </Button>
+      </a>
     </div>
     <div class="print:hidden">
       <Footer />

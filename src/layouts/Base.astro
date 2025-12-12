@@ -1,6 +1,9 @@
 ---
 import '@/styles/global.css';
-
+// Supports weights 300-700
+import '@fontsource-variable/space-grotesk';
+// Supports weights 100-800
+import '@fontsource-variable/jetbrains-mono';
 import { Header, Head, Footer } from '@/components/shared';
 
 type Props = {
@@ -10,13 +13,13 @@ type Props = {
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <Head title={title} />
   </head>
   <body class="">
     <Header />
-    <main class="container mx-auto min-h-full max-w-4xl px-5 pt-20">
+    <main class="container mx-auto min-h-full max-w-4xl px-5 pt-10">
       <slot />
     </main>
     <Footer />
