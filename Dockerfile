@@ -19,6 +19,10 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser \
     NODE_ENV=production
 
+# Build-time environment variables
+ARG ANALYTICS_GOOGLE_ID
+ENV ANALYTICS_GOOGLE_ID=$ANALYTICS_GOOGLE_ID
+
 # Copy package files
 COPY package.json bun.lockb ./
 

@@ -13,7 +13,7 @@ const PDF_MARGIN = 40;
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://zandome.com',
+  site: 'https://zandome.dev',
   integrations: [
     partytown({ config: { forward: ['dataLayer.push', 'gtag'] } }),
     react(),
