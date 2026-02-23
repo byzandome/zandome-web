@@ -27,20 +27,20 @@ bun run start
 
 ### Environment Variables
 
-| Variable | Description |
-| :--- | :--- |
+| Variable              | Description                     |
+| :-------------------- | :------------------------------ |
 | `ANALYTICS_GOOGLE_ID` | Google Analytics measurement ID |
-| `PHONE_NUMBER` | Contact phone number |
+| `PHONE_NUMBER`        | Contact phone number            |
 
 ## Commands
 
-| Command | Action |
-| :--- | :--- |
-| `bun run start` | Start local dev server at `localhost:4321` |
-| `bun run build` | Build production site to `./dist/` |
-| `bun run preview` | Preview production build locally |
-| `bun run lint` | Run ESLint |
-| `bun run format` | Check formatting with Prettier |
+| Command           | Action                                     |
+| :---------------- | :----------------------------------------- |
+| `bun run start`   | Start local dev server at `localhost:4321` |
+| `bun run build`   | Build production site to `./dist/`         |
+| `bun run preview` | Preview production build locally           |
+| `bun run lint`    | Run ESLint                                 |
+| `bun run format`  | Check formatting with Prettier             |
 
 ## Project Structure
 
@@ -61,16 +61,16 @@ bun run start
 
 ## CI/CD
 
-| Workflow | Trigger | Description |
-| :--- | :--- | :--- |
-| `ci.yml` | Push / PR | Lint, format check, and build |
+| Workflow     | Trigger        | Description                           |
+| :----------- | :------------- | :------------------------------------ |
+| `ci.yml`     | Push / PR      | Lint, format check, and build         |
 | `deploy.yml` | Push to `main` | Docker build + deploy to GitHub Pages |
 
 The deploy workflow builds the site inside Docker (which handles Chromium for PDF generation), extracts the `dist/` folder, and publishes it to GitHub Pages.
 
 ### Required GitHub Secrets
 
-| Secret | Description |
-| :--- | :--- |
+| Secret                | Description                     |
+| :-------------------- | :------------------------------ |
 | `ANALYTICS_GOOGLE_ID` | Google Analytics measurement ID |
-| `PHONE_NUMBER` | Contact phone number |
+| `PHONE_NUMBER`        | Contact phone number            |
