@@ -25,15 +25,30 @@ import Layout from '@/layouts/Base.astro';
           <a href="/cv">
             <Button>Know more about me</Button>
           </a>
-          <a href="https://instagram.com/byzandome" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com/byzandome"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <Instagram class="text-indigo-400" />
           </a>
-          <a href="https://linkedin.com/in/zandome" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://linkedin.com/in/zandome"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <!-- <Button variant="link" size="icon-lg"> -->
             <Linkedin class="text-indigo-400" />
             <!-- </Button> -->
           </a>
-          <a href="https://github.com/byzandome" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/byzandome"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
             <!-- <Button variant="link" size="icon-lg"> -->
             <Github class="text-indigo-400" />
             <!-- </Button> -->
@@ -48,6 +63,7 @@ import Layout from '@/layouts/Base.astro';
             format="webp"
             src={PictureProfile}
             alt="Profile"
+            loading="eager"
             fetchpriority="high"
             transition:animate="slide"
             transition:name="profile"
