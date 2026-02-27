@@ -1,6 +1,6 @@
 ---
-import AllCertificates from '@/assets/database/certificates.json';
-import CertificateGroup from '@/components/Certificates/CertificateGroup.astro';
+import AllCertificates from '@/assets/data/certificates.json';
+import { CertificateGroup } from '@/components/certificates';
 import Layout from '@/layouts/Base.astro';
 
 const totalCerts = AllCertificates.reduce((acc, group) => acc + group.items.length, 0);

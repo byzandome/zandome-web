@@ -3,10 +3,10 @@ import { ArrowRight } from '@lucide/astro';
 import { Icon } from 'astro-icon/components';
 import { Picture } from 'astro:assets';
 
-import Certificates from '@/assets/database/certificates.json';
-import Jobs from '@/assets/database/jobs.json';
+import Certificates from '@/assets/data/certificates.json';
+import Jobs from '@/assets/data/jobs.json';
 import PictureProfile from '@/assets/images/profile-picture.png';
-import ExperienceCard from '@/components/Curriculum/ExperienceCard.astro';
+import { ExperienceCard } from '@/components/curriculum';
 import Layout from '@/layouts/CV.astro';
 
 const LINKEDIN_USERNAME = 'zandome';
