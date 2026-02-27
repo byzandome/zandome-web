@@ -1,0 +1,26 @@
+---
+import AllCertificates from '@/assets/database/certificates.json';
+import CertificateGroup from '@/components/Certificates/CertificateGroup.astro';
+import Layout from '@/layouts/Base.astro';
+
+const totalCerts = AllCertificates.reduce((acc, group) => acc + group.items.length, 0);
+---
+
+<Layout title="Certifications | Miguel Mendoza">
+  <div class="flex flex-col gap-y-8 py-10">
+    <div>
+      <h1 class="text-3xl font-bold">Certifications</h1>
+      <p class="mt-2 text-gray-400">
+        {totalCerts} certificates across {AllCertificates.length} categories
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        AllCertificates.map((group) => (
+          <CertificateGroup category={group.category} items={group.items} />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

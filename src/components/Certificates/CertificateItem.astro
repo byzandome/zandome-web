@@ -1,0 +1,43 @@
+---
+import { ExternalLink } from '@lucide/astro';
+
+import { getCertificateUrl } from '@/utils/certificates';
+
+interface Props {
+  name: string;
+  platform: string;
+  file: string;
+  urlId?: string;
+}
+
+const { name, platform, file, urlId } = Astro.props;
+const officialUrl = urlId ? getCertificateUrl(platform, urlId) : undefined;
+---
+
+<li
+  class="group flex items-center justify-between gap-x-2 rounded px-2 py-1 text-sm transition-colors hover:bg-gray-800"
+>
+  <a
+    href={`/certificates/${file}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="min-w-0 flex-1 truncate group-hover:underline"
+  >
+    {name}
+  </a>
+  {
+    officialUrl ? (
+      <a
+        href={officialUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex shrink-0 items-center gap-x-1 text-xs text-gray-500 transition-colors hover:text-indigo-400"
+      >
+        {platform}
+        <ExternalLink class="h-3 w-3" />
+      </a>
+    ) : (
+      <span class="shrink-0 text-xs text-gray-500">{platform}</span>
+    )
+  }
+</li>

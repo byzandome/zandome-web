@@ -1,7 +1,9 @@
 ---
+import { ArrowRight } from '@lucide/astro';
 import { Icon } from 'astro-icon/components';
 import { Picture } from 'astro:assets';
 
+import Certificates from '@/assets/database/certificates.json';
 import Jobs from '@/assets/database/jobs.json';
 import PictureProfile from '@/assets/images/profile-picture.png';
 import ExperienceCard from '@/components/Curriculum/ExperienceCard.astro';
@@ -35,7 +37,9 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
         <h1 class="text-center text-2xl font-bold print:text-cv-title">
           Miguel Enrique Mendoza Rivero
         </h1>
-        <h2 class="text-center text-xl print:text-cv-subtitle">Senior Frontend Engineer</h2>
+        <h2 class="text-center text-xl print:text-cv-subtitle">
+          Senior Frontend Engineer & Tech Lead
+        </h2>
       </div>
       <div aria-label="Contact" class="cv__contact">
         <a href={EMAIL_URL} class="cv__contact__item hover:underline">
@@ -64,11 +68,11 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
     </section>
     <section class="cv__section border-t border-t-gray-400 pt-2" aria-label="Summary">
       <p class="print:text-cv-body print:italic">
-        Self-taught Senior Frontend Engineer with over {yearsOfExperience} years of experience designing
-        and building scalable, high-performance web and mobile applications. Proven track record in leading
-        cross-functional teams, defining frontend architecture, and aligning technical execution with
-        business strategy. Specialized in component-based architectures, performance optimization, and
-        digital transformation of legacy systems.
+        Self-taught Senior Frontend Engineer and Tech Lead with over {yearsOfExperience} years of experience
+        building and architecting scalable web and mobile products. Specialized in React and Next.js ecosystems,
+        microfrontend architectures, and component-driven design systems. Consistent track record of leading
+        engineering teams, defining frontend strategy, and delivering measurable technical impact across
+        fintech, eCommerce, and SaaS industries.
       </p>
     </section>
     <section class="cv__section" aria-label="Experience">
@@ -91,6 +95,45 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
         location="Barquisimeto, Venezuela"
       />
     </section>
+    <section class="cv__section print:hidden" aria-label="Certifications">
+      <header class="flex items-center justify-between gap-x-4 border-b border-b-gray-400">
+        <h3 class="cv__section__title">Certifications</h3>
+        <a
+          href="/certificates"
+          class="flex items-center gap-x-1 rounded-full border border-indigo-400/40 px-3 py-0.5 text-xs text-indigo-400 transition-colors hover:border-indigo-400 hover:bg-indigo-400/10"
+        >
+          View all <ArrowRight class="h-3 w-3" />
+        </a>
+      </header>
+      <div class="flex flex-col gap-y-2">
+        {
+          Certificates.filter((group) => group.items.some((cert) => cert.visibleInCV)).map(
+            (group) => (
+              <div>
+                <h4 class="text-sm font-semibold text-gray-400">{group.category}</h4>
+                <ul class="list-disc pl-8 text-base">
+                  {group.items
+                    .filter((cert) => cert.visibleInCV)
+                    .map((cert) => (
+                      <li>
+                        <a
+                          href={`/certificates/${cert.file}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="hover:underline"
+                        >
+                          {cert.name}
+                        </a>
+                        <span class="text-sm text-gray-400"> · {cert.platform}</span>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            ),
+          )
+        }
+      </div>
+    </section>
     <section class="cv__section" aria-label="Languages">
       <header class="flex items-center gap-x-4 border-b border-b-gray-400">
         <h3 class="cv__section__title">Languages</h3>
@@ -106,10 +149,11 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
       </header>
       <ul class="list-disc pl-8 text-base print:text-cv-body">
         <li>
-          <span class="text-base font-bold print:text-cv-body"> Technical Leadership </span>
+          <span class="text-base font-bold print:text-cv-body">Technical Leadership</span>
           <p class="text-base print:text-cv-body">
-            Proven ability to guide development teams, enforce coding standards, and contribute to
-            scalable architectural decisions.
+            Led teams of up to 9 engineers, enforced coding standards, drove architectural
+            decisions, and mentored mid and junior developers across multiple projects and
+            companies.
           </p>
         </li>
         <li>
@@ -117,36 +161,42 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
             >Problem Solving & Critical Thinking</span
           >
           <p class="text-base print:text-cv-body">
-            Skilled at analyzing complex technical and business challenges and implementing
-            effective, efficient solutions.
-          </p>
-        </li>
-        <li>
-          <span class="text-base font-bold print:text-cv-body">Self-Driven Learning</span>
-          <p class="text-base print:text-cv-body">
-            Fully self-taught developer with a strong commitment to continuous learning and
-            mastering new technologies independently.
+            Track record of identifying root causes in complex systems and proposing architectural
+            changes that delivered measurable improvements in performance and maintainability.
           </p>
         </li>
         <li>
           <span class="text-base font-bold print:text-cv-body">Cross-Functional Collaboration</span>
           <p class="text-base print:text-cv-body">
-            Experience working closely with product, marketing, and data teams to align technical
-            solutions with business and user needs.
+            Experienced working alongside product, design, CRO, and backend teams to align technical
+            execution with business and user goals.
           </p>
         </li>
         <li>
           <span class="text-base font-bold print:text-cv-body">Product-Oriented Mindset</span>
           <p class="text-base print:text-cv-body">
-            Focused on delivering real value by prioritizing usability, performance, and business
-            outcomes in every technical decision.
+            Prioritizes usability, performance, and real business outcomes — not just technical
+            correctness — in every architectural and implementation decision.
           </p>
         </li>
         <li>
-          <span class="text-base font-bold print:text-cv-body">Adaptability</span>
+          <span class="text-base font-bold print:text-cv-body"
+            >Fast Learning & Self-Driven Growth</span
+          >
           <p class="text-base print:text-cv-body">
-            Demonstrated ability to thrive in diverse industries, tech stacks, and multicultural
-            teams, both in startups and large organizations.
+            Fully self-taught engineer with no formal CS degree who has independently mastered web,
+            mobile, and native development across multiple stacks. Consistently picked up unfamiliar
+            technologies to meet project needs — from Swift and SwiftUI to Flutter and Electron —
+            and contributed meaningfully from day one.
+          </p>
+        </li>
+        <li>
+          <span class="text-base font-bold print:text-cv-body">Adaptability to Project Needs</span>
+          <p class="text-base print:text-cv-body">
+            Adapts technical approach to what each project actually requires, not to personal
+            preferences. Has shifted roles, stacks, and domains across startups and large
+            organizations — stepping into mobile, backend, and leadership contexts whenever the
+            situation demanded it.
           </p>
         </li>
       </ul>

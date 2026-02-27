@@ -1,0 +1,36 @@
+---
+import CertificateItem from './CertificateItem.astro';
+
+interface Certificate {
+  name: string;
+  platform: string;
+  file: string;
+  url?: string;
+  visibleInCV: boolean;
+}
+
+interface Props {
+  category: string;
+  items: Certificate[];
+}
+
+const { category, items } = Astro.props;
+---
+
+<div class="flex flex-col gap-y-2 rounded-lg border border-gray-700 p-4">
+  <h2 class="text-sm font-semibold tracking-wide text-indigo-400 uppercase">
+    {category}
+  </h2>
+  <ul class="flex flex-col gap-y-1">
+    {
+      items.map((cert) => (
+        <CertificateItem
+          name={cert.name}
+          platform={cert.platform}
+          file={cert.file}
+          urlId={cert.url}
+        />
+      ))
+    }
+  </ul>
+</div>

@@ -1,0 +1,415 @@
+[
+  {
+    "category": "Frontend",
+    "items": [
+      {
+        "name": "React",
+        "platform": "Platzi",
+        "file": "react.pdf",
+        "url": "1548-react-2019",
+        "visibleInCV": true
+      },
+      {
+        "name": "Next.js",
+        "platform": "Platzi",
+        "file": "nextjs.pdf",
+        "url": "1311-next-2018",
+        "visibleInCV": true
+      },
+      {
+        "name": "TypeScript",
+        "platform": "Platzi",
+        "file": "typescript.pdf",
+        "url": "1869-typescript-2020",
+        "visibleInCV": true
+      },
+      {
+        "name": "Professional Angular",
+        "platform": "Platzi",
+        "file": "professional-angular.pdf",
+        "url": "1731-angular-profesional",
+        "visibleInCV": true
+      },
+      {
+        "name": "Angular 16",
+        "platform": "Platzi",
+        "file": "angular-16.pdf",
+        "url": "2478-angular16",
+        "visibleInCV": true
+      },
+      {
+        "name": "Angular Performance",
+        "platform": "Platzi",
+        "file": "angular-performance.pdf",
+        "url": "1730-angular-performance",
+        "visibleInCV": true
+      },
+      {
+        "name": "Astro",
+        "platform": "Platzi",
+        "file": "astro.pdf",
+        "url": "6207-astro",
+        "visibleInCV": true
+      },
+      {
+        "name": "Angular 8",
+        "platform": "Platzi",
+        "file": "angular-8.pdf",
+        "url": "1670-angular-8",
+        "visibleInCV": false
+      },
+      {
+        "name": "Angular Development",
+        "platform": "Platzi",
+        "file": "angular-development.pdf",
+        "url": "1153-angular-4",
+        "visibleInCV": false
+      },
+      {
+        "name": "Angular APIs",
+        "platform": "Platzi",
+        "file": "angular-apis.pdf",
+        "url": "2495-angular-apis",
+        "visibleInCV": false
+      },
+      {
+        "name": "Angular Components",
+        "platform": "Platzi",
+        "file": "angular-components.pdf",
+        "url": "2486-angular-componentes",
+        "visibleInCV": false
+      },
+      {
+        "name": "Angular Modular Architecture",
+        "platform": "Platzi",
+        "file": "angular-modular.pdf",
+        "url": "2487-angular-modular",
+        "visibleInCV": false
+      },
+      {
+        "name": "Svelte",
+        "platform": "Platzi",
+        "file": "svelte.pdf",
+        "url": "1851-svelte",
+        "visibleInCV": false
+      },
+      {
+        "name": "Svelte (Advanced)",
+        "platform": "Platzi",
+        "file": "svelte-2.pdf",
+        "visibleInCV": false
+      },
+      {
+        "name": "Sapper",
+        "platform": "Platzi",
+        "file": "sapper.pdf",
+        "url": "1895-sapper",
+        "visibleInCV": false
+      },
+      {
+        "name": "JavaScript Fundamentals",
+        "platform": "Platzi",
+        "file": "javascript-fundamentals.pdf",
+        "url": "1339-fundamentos-javascript-2018",
+        "visibleInCV": false
+      },
+      {
+        "name": "JavaScript Asynchronism",
+        "platform": "Platzi",
+        "file": "javascript-async.pdf",
+        "url": "1789-asincronismo-js-old",
+        "visibleInCV": false
+      },
+      {
+        "name": "NPM & Package Management",
+        "platform": "Platzi",
+        "file": "npm.pdf",
+        "url": "1763-npm-js",
+        "visibleInCV": false
+      },
+      {
+        "name": "Online Payments Integration",
+        "platform": "Platzi",
+        "file": "online-payments.pdf",
+        "url": "1858-pagos-online",
+        "visibleInCV": false
+      }
+    ]
+  },
+  {
+    "category": "Architecture & Patterns",
+    "items": [
+      {
+        "name": "Frontend Architecture",
+        "platform": "Platzi",
+        "file": "frontend-architecture.pdf",
+        "url": "4623-arquitectura-frontend",
+        "visibleInCV": true
+      },
+      {
+        "name": "Clean Architecture",
+        "platform": "Platzi",
+        "file": "clean-architecture.pdf",
+        "url": "7759-arquitecturas-limpias",
+        "visibleInCV": true
+      },
+      {
+        "name": "Software Architecture Fundamentals",
+        "platform": "Platzi",
+        "file": "software-architecture-fundamentals.pdf",
+        "url": "12061-fundamentos-arquitectura-software",
+        "visibleInCV": true
+      },
+      {
+        "name": "Object-Oriented Programming",
+        "platform": "Platzi",
+        "file": "object-oriented-programming.pdf",
+        "url": "1474-oop",
+        "visibleInCV": true
+      },
+      {
+        "name": "SOLID Principles & Clean Code",
+        "platform": "Udemy",
+        "file": "solid-principles-clean-code.pdf",
+        "url": "UC-f59b0c7d-c2ea-48d1-b5ef-92f5405ea6eb",
+        "visibleInCV": true
+      }
+    ]
+  },
+  {
+    "category": "Leadership & Management",
+    "items": [
+      {
+        "name": "Team Leadership Skills Masterclass",
+        "platform": "Udemy",
+        "file": "team-leadership-masterclass.pdf",
+        "url": "UC-60b9835d-87a6-41c1-9000-5486c0dfb1fa",
+        "visibleInCV": true
+      },
+      {
+        "name": "Project Management",
+        "platform": "Platzi",
+        "file": "project-management.pdf",
+        "url": "1721-gestion-2019-2019",
+        "visibleInCV": false
+      },
+      {
+        "name": "Project Planning",
+        "platform": "Platzi",
+        "file": "project-planning.pdf",
+        "url": "2340-planificacion-proyectos",
+        "visibleInCV": false
+      },
+      {
+        "name": "Project Tracking",
+        "platform": "Platzi",
+        "file": "project-tracking.pdf",
+        "url": "2341-seguimiento-proyectos",
+        "visibleInCV": false
+      },
+      {
+        "name": "Data Analysis Project",
+        "platform": "Platzi",
+        "file": "data-analysis-project.pdf",
+        "url": "2248-analisis-datos-proyecto",
+        "visibleInCV": false
+      }
+    ]
+  },
+  {
+    "category": "Mobile",
+    "items": [
+      {
+        "name": "React Native",
+        "platform": "Platzi",
+        "file": "react-native.pdf",
+        "url": "1292-react-native-old",
+        "visibleInCV": true
+      },
+      {
+        "name": "Swift 5",
+        "platform": "Platzi",
+        "file": "swift-5.pdf",
+        "url": "1772-swift-5",
+        "visibleInCV": true
+      },
+      {
+        "name": "Ionic",
+        "platform": "Platzi",
+        "file": "ionic.pdf",
+        "url": "1281-ionic",
+        "visibleInCV": false
+      },
+      {
+        "name": "Flutter",
+        "platform": "Platzi",
+        "file": "flutter.pdf",
+        "url": "1386-flutter-old",
+        "visibleInCV": false
+      },
+      {
+        "name": "Dart",
+        "platform": "Platzi",
+        "file": "dart.pdf",
+        "url": "1502-dart-2019",
+        "visibleInCV": false
+      },
+      {
+        "name": "Swift 5 — Functional Programming",
+        "platform": "Platzi",
+        "file": "swift-5-functional.pdf",
+        "url": "1790-swift-5-func",
+        "visibleInCV": false
+      },
+      {
+        "name": "Swift 5 — Object-Oriented Programming",
+        "platform": "Platzi",
+        "file": "swift-5-oop.pdf",
+        "url": "1791-swift-5-poo",
+        "visibleInCV": false
+      },
+      {
+        "name": "Swift",
+        "platform": "Platzi",
+        "file": "swift.pdf",
+        "url": "1774-swift",
+        "visibleInCV": false
+      }
+    ]
+  },
+  {
+    "category": "Backend & Tools",
+    "items": [
+      {
+        "name": "NestJS",
+        "platform": "Platzi",
+        "file": "nestjs.pdf",
+        "url": "2272-nestjs-2021",
+        "visibleInCV": true
+      },
+      {
+        "name": "Docker",
+        "platform": "Platzi",
+        "file": "docker.pdf",
+        "url": "1432-docker-2018",
+        "visibleInCV": true
+      },
+      {
+        "name": "Express.js",
+        "platform": "Platzi",
+        "file": "express-js.pdf",
+        "url": "1437-express-js",
+        "visibleInCV": false
+      },
+      {
+        "name": "Node.js Fundamentals",
+        "platform": "Platzi",
+        "file": "nodejs-fundamentals.pdf",
+        "url": "1759-fundamentos-node",
+        "visibleInCV": false
+      },
+      {
+        "name": "NestJS Authentication",
+        "platform": "Platzi",
+        "file": "nestjs-authentication.pdf",
+        "url": "2283-nestjs-auth",
+        "visibleInCV": false
+      },
+      {
+        "name": "NestJS Modular Architecture",
+        "platform": "Platzi",
+        "file": "nestjs-modular.pdf",
+        "url": "2274-nestjs-modular",
+        "visibleInCV": false
+      },
+      {
+        "name": "NestJS with TypeORM",
+        "platform": "Platzi",
+        "file": "nestjs-typeorm.pdf",
+        "url": "2282-nestjs-typeorm",
+        "visibleInCV": false
+      },
+      {
+        "name": "Node.js, MongoDB & WebSockets",
+        "platform": "Platzi",
+        "file": "nodejs-mongodb-websockets.pdf",
+        "url": "1689-nodejs-mongo-websockets",
+        "visibleInCV": false
+      },
+      {
+        "name": "Electron.js",
+        "platform": "Platzi",
+        "file": "electronjs.pdf",
+        "url": "1124-electron",
+        "visibleInCV": false
+      }
+    ]
+  },
+  {
+    "category": "Other Languages",
+    "items": [
+      {
+        "name": "Golang",
+        "platform": "Platzi",
+        "file": "golang.pdf",
+        "url": "2232-programacion-golang",
+        "visibleInCV": false
+      },
+      {
+        "name": "Rust Basics",
+        "platform": "Platzi",
+        "file": "rust-basics.pdf",
+        "url": "3077-rust-basico",
+        "visibleInCV": false
+      },
+      {
+        "name": "Java Basics",
+        "platform": "Platzi",
+        "file": "java-basics.pdf",
+        "url": "1631-java-basico",
+        "visibleInCV": false
+      },
+      {
+        "name": "Java Basics (2015)",
+        "platform": "Platzi",
+        "file": "java-basics-2015.pdf",
+        "url": "1004-java-basico-2015",
+        "visibleInCV": false
+      },
+      {
+        "name": "Java Development",
+        "platform": "Platzi",
+        "file": "java-development.pdf",
+        "visibleInCV": false
+      },
+      {
+        "name": "Functional Java",
+        "platform": "Platzi",
+        "file": "functional-java.pdf",
+        "url": "1826-java-funcional",
+        "visibleInCV": false
+      },
+      {
+        "name": "Java Enterprise Edition",
+        "platform": "Platzi",
+        "file": "java-enterprise-edition.pdf",
+        "url": "1110-jee-2017",
+        "visibleInCV": false
+      },
+      {
+        "name": "PHP Introduction",
+        "platform": "Platzi",
+        "file": "php-introduction.pdf",
+        "url": "1338-introduccion-php-2018",
+        "visibleInCV": false
+      },
+      {
+        "name": "PHP Introduction (2018)",
+        "platform": "Platzi",
+        "file": "php-introduction-2.pdf",
+        "url": "1338-introduccion-php-2018",
+        "visibleInCV": false
+      }
+    ]
+  }
+]
