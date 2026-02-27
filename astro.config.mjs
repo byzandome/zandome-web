@@ -45,10 +45,19 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   output: 'static',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+    prefixDefaultLocale: false,
+  },
   redirects: {
     '/curriculum': {
       status: 302,
       destination: '/cv',
+    },
+    '/cover-letter-es': {
+      status: 301,
+      destination: '/es/cover-letter',
     },
   },
 });

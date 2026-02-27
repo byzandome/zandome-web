@@ -22,7 +22,10 @@ import { Button } from '@/components/ui/button';
     <main class="mx-auto max-w-4xl not-print:px-5 not-print:pt-25 not-print:lg:px-0">
       <slot />
     </main>
-    <div class="fixed right-5 bottom-5 print:hidden">
+    <div class="fixed right-5 bottom-5 flex flex-col items-end gap-y-2 print:hidden">
+      <a href="/cover-letter">
+        <Button variant="outline"> Cover Letter </Button>
+      </a>
       <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" id="btn:download:cv">
         <Button> Download CV </Button>
       </a>
