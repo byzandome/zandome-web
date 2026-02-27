@@ -14,6 +14,7 @@ const EMAIL = `miguel@${WEBSITE_DOMAIN}`;
 const PHONE_NUMBER = import.meta.env.PHONE_NUMBER;
 const PHONE_NUMBER_URL = `tel:${PHONE_NUMBER}`;
 const EMAIL_URL = `mailto:${EMAIL}`;
+const yearsOfExperience = new Date().getFullYear() - 2018;
 ---
 
 <Layout>
@@ -34,7 +35,7 @@ const EMAIL_URL = `mailto:${EMAIL}`;
         <h1 class="text-center text-2xl font-bold print:text-cv-title">
           Miguel Enrique Mendoza Rivero
         </h1>
-        <h2 class="text-center text-xl print:text-cv-subtitle">Senior Software Engineer</h2>
+        <h2 class="text-center text-xl print:text-cv-subtitle">Senior Frontend Engineer</h2>
       </div>
       <div aria-label="Contact" class="cv__contact">
         <a href={EMAIL_URL} class="cv__contact__item hover:underline">
@@ -61,17 +62,17 @@ const EMAIL_URL = `mailto:${EMAIL}`;
         </div>
       </div>
     </section>
-    <section class="cv__section border-t-1 border-t-gray-400 pt-2" aria-label="Summary">
+    <section class="cv__section border-t border-t-gray-400 pt-2" aria-label="Summary">
       <p class="print:text-cv-body print:italic">
-        Self-taught Senior Software Engineer with over 7 years of experience designing and building
-        scalable, high-performance web and mobile applications. Proven track record in leading
-        cross-functional teams, defining frontend architecture, and aligning technical execution
-        with business strategy. Specialized in component-based architectures, performance
-        optimization, and digital transformation of legacy systems.
+        Self-taught Senior Frontend Engineer with over {yearsOfExperience} years of experience designing
+        and building scalable, high-performance web and mobile applications. Proven track record in leading
+        cross-functional teams, defining frontend architecture, and aligning technical execution with
+        business strategy. Specialized in component-based architectures, performance optimization, and
+        digital transformation of legacy systems.
       </p>
     </section>
     <section class="cv__section" aria-label="Experience">
-      <header class="flex items-center gap-x-4 border-b-1 border-b-gray-400">
+      <header class="flex items-center gap-x-4 border-b border-b-gray-400">
         <h3 class="cv__section__title">Experience</h3>
       </header>
       <div class="flex flex-col gap-y-4 print:gap-y-1">
@@ -79,7 +80,7 @@ const EMAIL_URL = `mailto:${EMAIL}`;
       </div>
     </section>
     <section class="cv__section" aria-label="Education">
-      <header class="flex items-center gap-x-4 border-b-1 border-b-gray-400">
+      <header class="flex items-center gap-x-4 border-b border-b-gray-400">
         <h3 class="cv__section__title">Education</h3>
       </header>
       <ExperienceCard
@@ -91,7 +92,7 @@ const EMAIL_URL = `mailto:${EMAIL}`;
       />
     </section>
     <section class="cv__section" aria-label="Languages">
-      <header class="flex items-center gap-x-4 border-b-1 border-b-gray-400">
+      <header class="flex items-center gap-x-4 border-b border-b-gray-400">
         <h3 class="cv__section__title">Languages</h3>
       </header>
       <ul class="list-disc pl-8 text-base print:text-cv-body">
@@ -100,7 +101,7 @@ const EMAIL_URL = `mailto:${EMAIL}`;
       </ul>
     </section>
     <section class="cv__section" aria-label="Skills">
-      <header class="flex items-center gap-x-4 border-b-1 border-b-gray-400">
+      <header class="flex items-center gap-x-4 border-b border-b-gray-400">
         <h3 class="cv__section__title">Skills</h3>
       </header>
       <ul class="list-disc pl-8 text-base print:text-cv-body">
