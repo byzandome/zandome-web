@@ -102,6 +102,20 @@
     "technologies": ["JavaScript", "TypeScript", "React Native", "Stripe"]
   },
   {
+    "site": "Qubithat",
+    "grade": "Software Developer (Freelance)",
+    "startDate": "2020-06-01T00:00:00+00:00",
+    "endDate": "2020-12-01T00:00:00+00:00",
+    "goals": [
+      "Built Yama Club from scratch: an amenity-management system for a construction company's buildings in Mexico, with a real-time reservation system integrated with IoT-based door access.",
+      "Delivered time-boxed features and optimizations across Diri, PilloFON and Space Movil."
+    ],
+    "location": "Bogota, Colombia",
+    "url": null,
+    "isRemote": true,
+    "technologies": ["TypeScript", "React", "Node.js", "React Native", "Flutter"]
+  },
+  {
     "site": "BrickControl",
     "grade": "Senior Frontend Developer",
     "startDate": "2020-01-01T00:00:00+00:00",
@@ -115,20 +129,6 @@
     "url": "https://www.brickcontrol.com/es/",
     "isRemote": true,
     "technologies": ["Angular", "TypeScript", "RxJS"]
-  },
-  {
-    "site": "Qubithat",
-    "grade": "Software Developer (Freelance)",
-    "startDate": "2020-06-01T00:00:00+00:00",
-    "endDate": "2020-12-01T00:00:00+00:00",
-    "goals": [
-      "Built Yama Club from scratch: an amenity-management system for a construction company's buildings in Mexico, with a real-time reservation system integrated with IoT-based door access.",
-      "Delivered time-boxed features and optimizations across Diri, PilloFON and Space Movil."
-    ],
-    "location": "Bogota, Colombia",
-    "url": null,
-    "isRemote": true,
-    "technologies": ["TypeScript", "React", "Node.js", "React Native", "Flutter"]
   },
   {
     "site": "CADI F1 Academia de Software",
