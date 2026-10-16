@@ -89,40 +89,6 @@
     ]
   },
   {
-    "site": "Freelance (project-based)",
-    "location": "Project-based",
-    "url": null,
-    "isRemote": true,
-    "roles": [
-      {
-        "grade": "Freelance Cross Platform Developer, IbisDev",
-        "startDate": "2021-10-01T00:00:00+00:00",
-        "endDate": "2021-12-01T00:00:00+00:00",
-        "goals": [
-          "Short project-based engagement on a food-ordering app with real-time delivery tracking: built a responsive, secure React Native checkout for iOS and Android with Stripe payment flows."
-        ]
-      },
-      {
-        "grade": "Freelance Software Developer, Qubithat",
-        "startDate": "2020-06-01T00:00:00+00:00",
-        "endDate": "2020-12-01T00:00:00+00:00",
-        "goals": [
-          "Project-based work on time-boxed features and optimizations across Yama Club, Diri, PilloFON and Space Movil.",
-          "Built Yama Club from scratch: an amenity-management system for a construction company's buildings in Mexico, with a real-time reservation system integrated with IoT-based door access."
-        ]
-      }
-    ],
-    "technologies": [
-      "Flutter",
-      "JavaScript",
-      "Node.js",
-      "React",
-      "React Native",
-      "Stripe",
-      "TypeScript"
-    ]
-  },
-  {
     "site": "BrickControl",
     "grade": "Mid-Senior Frontend Developer",
     "startDate": "2020-01-01T00:00:00+00:00",

@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import { Picture } from 'astro:assets';
 
 import Certificates from '@/assets/data/certificates.json';
+import Freelance from '@/assets/data/freelance.json';
 import Jobs from '@/assets/data/jobs.json';
 import PictureProfile from '@/assets/images/profile-picture.png';
 import { ExperienceCard } from '@/components/curriculum';
@@ -82,6 +83,14 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
       </header>
       <div class="flex flex-col gap-y-4 print:gap-y-1">
         {Jobs.map((job) => <ExperienceCard {...job} />)}
+      </div>
+    </section>
+    <section class="cv__section" aria-label="Freelance Projects">
+      <header class="flex items-center gap-x-4 border-b border-b-gray-400">
+        <h3 class="cv__section__title">Freelance Projects</h3>
+      </header>
+      <div class="flex flex-col gap-y-4 print:gap-y-1">
+        {Freelance.map((job) => <ExperienceCard {...job} />)}
       </div>
     </section>
     <section class="cv__section" aria-label="Education">
