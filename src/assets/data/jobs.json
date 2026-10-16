@@ -42,15 +42,8 @@
   },
   {
     "site": "Southern Code",
-    "grade": "Senior Frontend Developer",
     "startDate": "2021-12-01T00:00:00+00:00",
     "endDate": "2024-07-01T00:00:00+00:00",
-    "goals": [
-      "Built the entire frontend of a Mexican Stock Exchange (BMV) platform for buying government bonds, from scratch in 6 months: Angular with Clean Architecture, RxJS, and WebSockets plus Server-Sent Events for live prices.",
-      "Proposed and prototyped MVVM with SwiftUI for Arlo Security's iOS app. Arlo's team implemented it, and time to a useful screen dropped from over 10 seconds to about 5.",
-      "Proposed a Next.js monorepo of microfrontends for 3Sixty's B2B room-booking platform (booking, checkout and search deploy independently), and a Factory pattern for checkout with one URL and lazy-loaded payment steps.",
-      "Drove frontend architecture decisions across multiple concurrent projects and mentored 3 junior and mid-level developers."
-    ],
     "location": "Cordoba, Argentina",
     "url": "https://southerncode.us",
     "isRemote": true,
@@ -63,6 +56,36 @@
       "SwiftUI",
       "Microfrontends",
       "Clean Architecture"
+    ],
+    "roles": [
+      {
+        "grade": "Senior Frontend Developer, 3Sixty",
+        "startDate": "2022-10-01T00:00:00+00:00",
+        "endDate": "2024-07-01T00:00:00+00:00",
+        "goals": [
+          "Proposed a Next.js monorepo of microfrontends for 3Sixty's B2B room-booking platform, so booking, checkout and search deploy independently and share components.",
+          "Proposed a Factory pattern for checkout: one URL for every payment variation, with lazy-loaded steps by role, hotel or client configuration.",
+          "Applied Clean Architecture progressively, drove frontend architecture decisions across concurrent projects and mentored 3 junior and mid-level developers."
+        ]
+      },
+      {
+        "grade": "iOS Developer, Arlo Security",
+        "startDate": "2022-06-01T00:00:00+00:00",
+        "endDate": "2022-09-01T00:00:00+00:00",
+        "goals": [
+          "Joined as an emergency developer, fixed QA bugs, and proposed and prototyped MVVM with SwiftUI to remove slowness from duplicated API calls between screens.",
+          "Arlo's team implemented it, and time to a useful screen dropped from over 10 seconds to about 5."
+        ]
+      },
+      {
+        "grade": "Frontend Developer, Mexican Stock Exchange (BMV)",
+        "startDate": "2021-12-01T00:00:00+00:00",
+        "endDate": "2022-05-01T00:00:00+00:00",
+        "goals": [
+          "Defined the architecture with the tech lead and built the entire frontend of a platform for buying government bonds, from scratch in about 6 months.",
+          "Angular with Clean Architecture, RxJS, and WebSockets plus Server-Sent Events for live prices."
+        ]
+      }
     ]
   },
   {
@@ -109,17 +132,31 @@
   },
   {
     "site": "CADI F1 Academia de Software",
-    "grade": "Full Stack Developer & Team Lead",
     "startDate": "2018-09-01T00:00:00+00:00",
     "endDate": "2019-12-01T00:00:00+00:00",
-    "goals": [
-      "First developer on KPImetro, a KPI dashboard platform for SMEs (web, Ionic mobile, Electron desktop, PHP/MySQL backend).",
-      "Initiated and built the shared Angular NPM package holding backend connection, business logic and state management for every client app.",
-      "Led a team of 5 developers and agile practices after about a year. Also taught PHP, JavaScript, Angular and REST at the academy."
-    ],
     "location": "Barquisimeto, Venezuela",
     "url": null,
     "isRemote": false,
-    "technologies": ["TypeScript", "Angular", "Ionic", "PHP", "ElectronJS"]
+    "technologies": ["TypeScript", "Angular", "Ionic", "PHP", "ElectronJS"],
+    "roles": [
+      {
+        "grade": "Team Lead",
+        "startDate": "2019-10-01T00:00:00+00:00",
+        "endDate": "2019-12-01T00:00:00+00:00",
+        "goals": [
+          "Took over the lead of 5 developers on KPImetro after about a year on the product, coordinating the team and its agile practices."
+        ]
+      },
+      {
+        "grade": "Full Stack Developer",
+        "startDate": "2018-09-01T00:00:00+00:00",
+        "endDate": "2019-09-01T00:00:00+00:00",
+        "goals": [
+          "First developer on KPImetro, a KPI dashboard platform for SMEs (web, Ionic mobile, Electron desktop, PHP/MySQL backend).",
+          "Initiated and built the shared Angular NPM package holding backend connection, business logic and state management for every client app.",
+          "Also taught PHP, JavaScript, Angular and REST at the academy (Nov 2018 to Aug 2019)."
+        ]
+      }
+    ]
   }
 ]
