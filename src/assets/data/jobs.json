@@ -78,7 +78,7 @@
         ]
       },
       {
-        "grade": "Frontend Developer, Mexican Stock Exchange (BMV)",
+        "grade": "Mid-Senior Frontend Developer, Mexican Stock Exchange (BMV)",
         "startDate": "2021-12-01T00:00:00+00:00",
         "endDate": "2022-05-01T00:00:00+00:00",
         "goals": [
@@ -89,39 +89,46 @@
     ]
   },
   {
-    "site": "IbisDev",
-    "grade": "Cross Platform Developer",
-    "startDate": "2021-10-01T00:00:00+00:00",
-    "endDate": "2021-12-01T00:00:00+00:00",
-    "goals": [
-      "Built a responsive, secure checkout UI for iOS and Android with Stripe payment flows, for a food-ordering app with real-time delivery tracking."
-    ],
-    "location": "Paris, France",
-    "url": "https://www.ibisdev.tech/",
-    "isRemote": true,
-    "technologies": ["JavaScript", "TypeScript", "React Native", "Stripe"]
-  },
-  {
-    "site": "Qubithat",
-    "grade": "Software Developer (Freelance)",
-    "startDate": "2020-06-01T00:00:00+00:00",
-    "endDate": "2020-12-01T00:00:00+00:00",
-    "goals": [
-      "Built Yama Club from scratch: an amenity-management system for a construction company's buildings in Mexico, with a real-time reservation system integrated with IoT-based door access.",
-      "Delivered time-boxed features and optimizations across Diri, PilloFON and Space Movil."
-    ],
-    "location": "Bogota, Colombia",
+    "site": "Freelance (project-based)",
+    "location": "Project-based",
     "url": null,
     "isRemote": true,
-    "technologies": ["TypeScript", "React", "Node.js", "React Native", "Flutter"]
+    "roles": [
+      {
+        "grade": "Freelance Cross Platform Developer, IbisDev",
+        "startDate": "2021-10-01T00:00:00+00:00",
+        "endDate": "2021-12-01T00:00:00+00:00",
+        "goals": [
+          "Short project-based engagement on a food-ordering app with real-time delivery tracking: built a responsive, secure React Native checkout for iOS and Android with Stripe payment flows."
+        ]
+      },
+      {
+        "grade": "Freelance Software Developer, Qubithat",
+        "startDate": "2020-06-01T00:00:00+00:00",
+        "endDate": "2020-12-01T00:00:00+00:00",
+        "goals": [
+          "Project-based work on time-boxed features and optimizations across Yama Club, Diri, PilloFON and Space Movil.",
+          "Built Yama Club from scratch: an amenity-management system for a construction company's buildings in Mexico, with a real-time reservation system integrated with IoT-based door access."
+        ]
+      }
+    ],
+    "technologies": [
+      "Flutter",
+      "JavaScript",
+      "Node.js",
+      "React",
+      "React Native",
+      "Stripe",
+      "TypeScript"
+    ]
   },
   {
     "site": "BrickControl",
-    "grade": "Senior Frontend Developer",
+    "grade": "Mid-Senior Frontend Developer",
     "startDate": "2020-01-01T00:00:00+00:00",
     "endDate": "2021-12-01T00:00:00+00:00",
     "goals": [
-      "Led a frontend team of 6 engineers in the phased migration of a Silverlight construction CRM to Angular, managing technical coordination and delivery.",
+      "Joined as a Mid-Senior frontend developer for the phased Silverlight to Angular migration of a construction CRM, and grew into the lead of a frontend team of 6, managing technical coordination and delivery.",
       "Built a custom Angular RouterModule extension that reproduces Silverlight's browser-tab-like navigation, keeping each screen's state in memory.",
       "Defined the frontend architecture and established component standards, documentation and CI adopted across the team."
     ],
