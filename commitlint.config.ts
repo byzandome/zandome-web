@@ -20,6 +20,7 @@ const Configuration: UserConfig = {
         'chore',
         'revert',
         'deps',
+        'release',
       ],
     ],
   },
