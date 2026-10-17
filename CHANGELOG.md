@@ -1,5 +1,15 @@
 # zandome-web
 
+## 1.5.0
+
+### Minor Changes
+
+- [#13](https://github.com/byzandome/zandome-web/pull/13) [`c4cb45d`](https://github.com/byzandome/zandome-web/commit/c4cb45d5e6dd55975acf4515100f3b7cf238fba2) Thanks [@byzandome](https://github.com/byzandome)! - Update dependencies (Astro 7, @astrojs/react 7, ESLint 10, Puppeteer 25, Lucide 1.x, Bun 1.4), bump GitHub Actions versions and enable React Compiler.
+
+### Patch Changes
+
+- [#13](https://github.com/byzandome/zandome-web/pull/13) [`c4cb45d`](https://github.com/byzandome/zandome-web/commit/c4cb45d5e6dd55975acf4515100f3b7cf238fba2) Thanks [@byzandome](https://github.com/byzandome)! - Use TypeScript 6 (via `@typescript/typescript6`) for tooling, fix `tsconfig` for TS 7 compatibility and add a type-check step to CI.
+
 ## 1.4.0
 
 ### Minor Changes
