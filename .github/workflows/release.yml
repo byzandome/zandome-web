@@ -38,6 +38,7 @@ jobs:
           private-key: ${{ secrets.CHANGESETS_PRIVATE_KEY }}
 
       - name: Create Release PR or Publish
+        id: changesets
         uses: changesets/action@v2.1.2
         with:
           version: bun run version
@@ -45,3 +46,9 @@ jobs:
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: Enable auto-merge on release PR
+        if: steps.changesets.outputs.hasChangesets == 'true'
+        run: gh pr merge "${{ steps.changesets.outputs.pullRequestNumber }}" --auto --squash
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}

@@ -18,7 +18,7 @@ permissions:
 jobs:
   changeset:
     name: Check Changeset
-    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+    if: github.event_name == 'pull_request' && github.base_ref == 'main' && github.head_ref != 'changeset-release/main'
     continue-on-error: true
     runs-on: ubuntu-24.04
     steps:
@@ -41,6 +41,7 @@ jobs:
 
   lint:
     name: Lint and Format
+    if: github.head_ref != 'changeset-release/main'
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Code
@@ -63,6 +64,7 @@ jobs:
 
   build:
     name: Build
+    if: github.head_ref != 'changeset-release/main'
     timeout-minutes: 5
     needs: [lint]
     runs-on: ubuntu-24.04
