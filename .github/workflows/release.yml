@@ -32,10 +32,10 @@ jobs:
 
       - name: Generate GitHub App Token
         id: app-token
-        uses: tibdex/github-app-token@v2
+        uses: actions/create-github-app-token@latest
         with:
-          app_id: ${{ secrets.CHANGESETS_APP_ID }}
-          private_key: ${{ secrets.CHANGESETS_PRIVATE_KEY }}
+          app-id: ${{ secrets.CHANGESETS_APP_ID }}
+          private-key: ${{ secrets.CHANGESETS_PRIVATE_KEY }}
 
       - name: Create Release PR or Publish
         uses: changesets/action@v1
