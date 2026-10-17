@@ -1,5 +1,5 @@
 # Build stage
-FROM oven/bun:1.3.4-alpine AS builder
+FROM oven/bun:1.4.3-alpine AS builder
 
 WORKDIR /app
 
@@ -24,7 +24,7 @@ ARG ANALYTICS_GOOGLE_ID
 ENV ANALYTICS_GOOGLE_ID=$ANALYTICS_GOOGLE_ID
 
 # Copy package files
-COPY package.json bun.lockb ./
+COPY package.json bun.lock ./
 
 # Install dependencies
 RUN bun install --frozen-lockfile
