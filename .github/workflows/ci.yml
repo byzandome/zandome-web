@@ -57,6 +57,9 @@ jobs:
       - name: Run Lint
         run: |
           bun run lint:ci
+      - name: Type Check
+        run: |
+          bun run typecheck
 
   build:
     name: Build
