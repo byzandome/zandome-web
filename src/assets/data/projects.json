@@ -1,0 +1,87 @@
+[
+  {
+    "title": "Multi-framework UI system",
+    "company": "Solera",
+    "role": "Software Engineering Manager",
+    "period": "2024 - Present",
+    "summary": "A UI component system for a company with dozens of applications on different stacks (PHP, .NET, Java, React, Angular) and vertical-specific design lines.",
+    "highlights": [
+      "Framework-agnostic Web Components on Lit, plus a sister design-token CSS library that exports only the CSS each page uses.",
+      "React and Angular wrappers so each team adopts it in its own stack.",
+      "Roughly 2x features per sprint (team story points) and near-complete mobile support in apps that had none.",
+      "An MCP server that tells LLMs and AI tooling which components to use."
+    ],
+    "technologies": [
+      "Lit",
+      "Web Components",
+      "TypeScript",
+      "React",
+      "Angular",
+      "Design Tokens",
+      "MCP"
+    ]
+  },
+  {
+    "title": "Smartdrive frontend migration",
+    "company": "Solera",
+    "role": "Software Engineering Manager",
+    "period": "2024 - 2025",
+    "summary": "Partial migration of the customer-facing screens of a long-lived .NET Framework 4 platform to Web Components and React.",
+    "highlights": [
+      "Led the analysis, product conversations, first components and custom adaptations such as charts.",
+      "Team of 14 over the first 6 months, fixing years-old bugs and updating rendering-engine dependencies.",
+      "Released in one go with zero production defects, with better load time and accessibility (Lighthouse)."
+    ],
+    "technologies": [".NET", "Web Components", "React", "HTML/CSS"]
+  },
+  {
+    "title": "BMV bond-trading frontend",
+    "company": "Southern Code",
+    "role": "Senior Frontend Developer",
+    "period": "2022 - 2023",
+    "summary": "A from-scratch platform for new clients to buy government bonds on the Mexican Stock Exchange.",
+    "highlights": [
+      "Defined the architecture with the tech lead and built the entire frontend in 6 months.",
+      "Angular with Clean Architecture so more modules could be added without rewrites.",
+      "RxJS, WebSockets and Server-Sent Events to show live price swings of stocks and bonds."
+    ],
+    "technologies": ["Angular", "RxJS", "WebSockets", "SSE", "Clean Architecture"]
+  },
+  {
+    "title": "Arlo iOS app: MVVM with SwiftUI",
+    "company": "Southern Code",
+    "role": "Senior Frontend Developer",
+    "period": "2023",
+    "summary": "Joined a security app's iOS team as an emergency developer and proposed an architecture to fix slowness caused by duplicated API calls between screens.",
+    "highlights": [
+      "Prototyped MVVM with SwiftUI and the base services, with fewer crashes on map elements and centralized permission requests.",
+      "Approved by Arlo's leads and implemented by their internal team.",
+      "Time to a useful screen dropped from over 10 seconds to about 5."
+    ],
+    "technologies": ["Swift", "SwiftUI", "MVVM"]
+  },
+  {
+    "title": "3Sixty microfrontends and checkout",
+    "company": "Southern Code",
+    "role": "Senior Frontend Developer",
+    "period": "2022 - 2024",
+    "summary": "A B2B room-booking platform for large companies, built by three teams of about ten people.",
+    "highlights": [
+      "Proposed a Next.js monorepo of microfrontends so booking, checkout and search deploy independently and share components.",
+      "Proposed a Factory pattern for checkout: one URL for every payment variation, with lazy-loaded steps by role, hotel or client configuration."
+    ],
+    "technologies": ["Next.js", "Microfrontends", "Monorepo", "Factory Pattern"]
+  },
+  {
+    "title": "Silverlight to Angular migration",
+    "company": "BrickControl",
+    "role": "Senior Frontend Developer",
+    "period": "2020 - 2022",
+    "summary": "Phased migration of a construction-sector CRM, from simple modules to project planning and machinery organization.",
+    "highlights": [
+      "Led a frontend team of 6.",
+      "Built a custom Angular RouterModule extension for browser-tab-like navigation that keeps every screen's state in memory."
+    ],
+    "technologies": ["Angular", "TypeScript", "RxJS"]
+  }
+]

@@ -23,25 +23,28 @@ export const ui: Record<Locale, CoverLetterUI> = {
     switchLang: 'Ver en Español',
     location: 'Madrid, Spain',
     salutation: 'Dear Hiring Manager,',
-    intro: `I am a Senior Frontend Engineer and Tech Lead with over {years} years of experience
-      building scalable web and mobile products. I am passionate about creating performant,
-      maintainable applications and leading engineering teams to deliver real business value.`,
-    experience: `Over the course of my career, I have led engineering teams of up to 9 people, architected
-      frontend systems for major platforms — including the Mexican Stock Exchange — and built
-      component libraries that cut screen development time by 50% and reduced UI bugs by 80%.
-      My work spans React, Next.js, TypeScript, microfrontend architectures, and cross-platform
-      mobile development across fintech, eCommerce, and SaaS industries.`,
-    differentiator: `What sets me apart is not just technical depth but the ability to align engineering
-      decisions with product and business goals. I bring a product-oriented mindset to every
-      project — understanding that the best technical solution is the one that creates measurable
-      value. Whether defining architecture for a greenfield project, migrating a legacy codebase,
-      or building a scalable design system, I focus on outcomes over process.`,
-    learning: `I am fully self-taught and have independently mastered multiple technology stacks — from
-      React and Angular on the web to Swift and Flutter on mobile. This track record of rapid
-      learning means I can contribute meaningfully from day one, regardless of the specific
-      technologies your team uses.`,
-    contactBefore: `I would be glad to discuss how my experience aligns with what you are looking for. Please
-      feel free to reach out at `,
+    intro: `I am a self-taught Software Engineering Manager with {years}+ years of experience building
+      and architecting web and mobile products. Learning is still the part of the job I enjoy
+      most: I like problems I do not know how to solve yet, and turning them into something a
+      team can understand and keep alive.`,
+    experience: `My career has grown in layers. I started as a developer who learned every stack the work
+      demanded, then led my first team, then larger migrations, and today I make architecture
+      decisions that other teams build on. At Solera I designed a multi-framework UI system (Lit
+      Web Components, design tokens, React and Angular wrappers) that several applications use, and
+      I led the migration of Smartdrive's customer-facing screens from .NET Framework 4 to Web
+      Components and React with zero production defects. Earlier I built the entire frontend of a
+      Mexican Stock Exchange bond platform and led a Silverlight to Angular migration.`,
+    differentiator: `I decide things by talking them through, with my team and with neighboring teams, and I
+      want developers to question the product, not just build it. I measure a team by what it
+      delivers and how well, not by hours at a desk, and I give people room to own technical
+      decisions, with responsibility that grows as they do. I propose architecture where I see a
+      real problem, such as MVVM with SwiftUI for Arlo's iOS app and a microfrontend monorepo for
+      3Sixty's booking platform.`,
+    learning: `I have learned each stack the problem required, from React and Angular on the web to
+      Swift and Flutter on mobile, and I still try new tools in my own time out of curiosity. That
+      lets me contribute from the first week, whichever technologies your team uses.`,
+    contactBefore: `I would be glad to discuss how my experience fits what you are looking for. You can
+      reach me at `,
     contactOr: ` or through `,
     closing: 'Thank you for your time and consideration.',
     signOff: 'Sincerely,',
@@ -52,27 +55,29 @@ export const ui: Record<Locale, CoverLetterUI> = {
     switchLang: 'View in English',
     location: 'Madrid, España',
     salutation: 'Estimado equipo de selección,',
-    intro: `Soy un Senior Frontend Engineer y Tech Lead con más de {years} años de experiencia
-      construyendo productos web y móviles escalables. Me apasiona crear aplicaciones de alto
-      rendimiento y fáciles de mantener, y liderar equipos de ingeniería que generen un valor
-      real para el negocio.`,
-    experience: `A lo largo de mi carrera, he liderado equipos de hasta 9 ingenieros, arquitectado sistemas
-      frontend para plataformas de gran envergadura — incluyendo la Bolsa Mexicana de Valores —
-      y construido librerías de componentes que redujeron el tiempo de desarrollo de pantallas en
-      un 50% y los errores de UI en un 80%. Mi experiencia abarca React, Next.js, TypeScript,
-      arquitecturas de microfrontend y desarrollo móvil multiplataforma en sectores como fintech,
-      eCommerce y SaaS.`,
-    differentiator: `Lo que me diferencia no es sólo la profundidad técnica, sino la capacidad de alinear las
-      decisiones de ingeniería con los objetivos de producto y negocio. Adopto un enfoque
-      orientado al producto en cada proyecto — entendiendo que la mejor solución técnica es la
-      que genera valor medible. Ya sea definiendo la arquitectura de un proyecto desde cero,
-      migrando una plataforma legacy o construyendo un sistema de diseño escalable, siempre me
-      enfoco en los resultados.`,
-    learning: `Soy completamente autodidacta y he dominado de forma independiente múltiples stacks
-      tecnológicos — desde React y Angular en web hasta Swift y Flutter en móvil. Este historial
-      de aprendizaje rápido me permite contribuir de manera significativa desde el primer día,
-      independientemente de las tecnologías específicas que use tu equipo.`,
-    contactBefore: `Me encantaría hablar sobre cómo mi experiencia se adapta a lo que buscas. No dudes en
+    intro: `Soy Software Engineering Manager autodidacta, con más de {years} años de experiencia
+      construyendo y diseñando la arquitectura de productos web y móviles. Aprender sigue siendo
+      lo que más disfruto de este trabajo: me gustan los problemas que aún no sé resolver y
+      convertirlos en algo que un equipo pueda entender y mantener vivo.`,
+    experience: `Mi carrera ha crecido por capas. Empecé como desarrollador que aprendía cada stack que el
+      trabajo pedía, después lideré mi primer equipo, luego migraciones más grandes, y hoy tomo
+      decisiones de arquitectura sobre las que construyen otros equipos. En Solera diseñé un
+      sistema de UI multi-framework (Web Components con Lit, design tokens y wrappers para React y
+      Angular) que usan varias aplicaciones, y lideré la migración de las pantallas de cara al
+      cliente de Smartdrive desde .NET Framework 4 a Web Components y React con cero defectos en
+      producción. Antes construí todo el frontend de una plataforma de bonos de la Bolsa Mexicana
+      de Valores y lideré una migración de Silverlight a Angular.`,
+    differentiator: `Decido hablando las cosas, con mi equipo y con los equipos vecinos, y quiero que los
+      desarrolladores cuestionen el producto, no solo que lo construyan. Mido a un equipo por lo
+      que entrega y cómo lo entrega, no por las horas frente al escritorio, y doy espacio para
+      que cada persona tome decisiones técnicas, con una responsabilidad que crece con ella.
+      Propongo arquitectura cuando veo un problema real, como MVVM con SwiftUI para la app iOS de
+      Arlo y un monorepo de microfrontends para la plataforma de reservas de 3Sixty.`,
+    learning: `He aprendido cada stack que el problema requería, desde React y Angular en web hasta
+      Swift y Flutter en móvil, y sigo probando herramientas nuevas en mi tiempo libre por
+      curiosidad. Eso me permite contribuir desde la primera semana, con las tecnologías que use
+      tu equipo.`,
+    contactBefore: `Me encantaría hablar sobre cómo mi experiencia encaja con lo que buscas. Puedes
       contactarme en `,
     contactOr: ` o a través de `,
     closing: 'Gracias por tu tiempo y consideración.',

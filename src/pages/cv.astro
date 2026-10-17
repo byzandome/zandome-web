@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import { Picture } from 'astro:assets';
 
 import Certificates from '@/assets/data/certificates.json';
+import Freelance from '@/assets/data/freelance.json';
 import Jobs from '@/assets/data/jobs.json';
 import PictureProfile from '@/assets/images/profile-picture.png';
 import { ExperienceCard } from '@/components/curriculum';
@@ -38,7 +39,7 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
           Miguel Enrique Mendoza Rivero
         </h1>
         <h2 class="text-center text-xl print:text-cv-subtitle">
-          Senior Frontend Engineer & Tech Lead
+          Software Engineering Manager | Frontend Architecture & Design Systems
         </h2>
       </div>
       <div aria-label="Contact" class="cv__contact">
@@ -68,11 +69,12 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
     </section>
     <section class="cv__section border-t border-t-gray-400 pt-2" aria-label="Summary">
       <p class="print:text-cv-body print:italic">
-        Self-taught Senior Frontend Engineer and Tech Lead with over {yearsOfExperience} years of experience
-        building and architecting scalable web and mobile products. Specialized in React and Next.js ecosystems,
-        microfrontend architectures, and component-driven design systems. Consistent track record of leading
-        engineering teams, defining frontend strategy, and delivering measurable technical impact across
-        fintech, eCommerce, and SaaS industries.
+        Self-taught Software Engineering Manager with {yearsOfExperience}+ years of experience
+        building and architecting web and mobile products. I grew from a developer who learned every
+        stack the work demanded into a leader who owns architecture decisions that other teams build
+        on, and I still stay close to the code. I work by talking decisions through, measure teams
+        by what they deliver, and give people room to own technical decisions. Strong in frontend
+        architecture, design systems and legacy migrations across fintech, eCommerce and SaaS.
       </p>
     </section>
     <section class="cv__section" aria-label="Experience">
@@ -81,6 +83,14 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
       </header>
       <div class="flex flex-col gap-y-4 print:gap-y-1">
         {Jobs.map((job) => <ExperienceCard {...job} />)}
+      </div>
+    </section>
+    <section class="cv__section" aria-label="Freelance Projects">
+      <header class="flex items-center gap-x-4 border-b border-b-gray-400">
+        <h3 class="cv__section__title">Freelance Projects</h3>
+      </header>
+      <div class="flex flex-col gap-y-4 print:gap-y-1">
+        {Freelance.map((job) => <ExperienceCard {...job} />)}
       </div>
     </section>
     <section class="cv__section" aria-label="Education">
@@ -151,7 +161,7 @@ const yearsOfExperience = new Date().getFullYear() - 2018;
         <li>
           <span class="text-base font-bold print:text-cv-body">Technical Leadership</span>
           <p class="text-base print:text-cv-body">
-            Led teams of up to 9 engineers, enforced coding standards, drove architectural
+            Led teams of up to 14 engineers, enforced coding standards, drove architectural
             decisions, and mentored mid and junior developers across multiple projects and
             companies.
           </p>

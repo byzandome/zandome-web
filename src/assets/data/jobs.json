@@ -1,14 +1,16 @@
 [
   {
     "site": "Solera Holdings, LLC.",
-    "grade": "Software Manager Engineer",
-    "startDate": "2024-11-28T00:00:00+00:00",
+    "grade": "Software Engineering Manager",
+    "startDate": "2024-10-01T00:00:00+00:00",
     "endDate": null,
     "goals": [
-      "Lead a team of 9 engineers (Mid, Senior, and Junior) across two major product lines, coordinating delivery and driving research of emerging technologies through proof-of-concept initiatives.",
-      "Built a scalable UI component library adopted across multiple applications, reducing screen development time by 50%, cutting UI and responsive bugs by 80%, and achieving a 35% improvement in cross-application UI consistency.",
-      "Led the migration of a legacy platform to a modern Web Components-based React architecture.",
-      "Defined frontend architectural guidelines and contributed to infrastructure and platform strategy decisions."
+      "Lead a team of 7 engineers (Junior to Senior) across two major product lines, coordinating delivery and running proof-of-concept research on emerging technologies.",
+      "Designed and built a multi-framework UI component system for apps on PHP, .NET, Java, React and Angular: Lit Web Components, a design-token CSS library that exports only the CSS each page uses, and React and Angular wrappers. Adopted in 8 applications, with 20+ expected by early 2027.",
+      "Roughly doubled the features delivered per sprint (measured in team story points) and added near-complete mobile-responsive support to applications that had none.",
+      "Led the migration of Smartdrive's customer-facing screens from .NET Framework 4 to Web Components and React: 6 months, a team of 14, zero production defects, and better load time and accessibility (Lighthouse).",
+      "Built an MCP server so LLMs and AI tooling know which library components to use when generating interfaces.",
+      "Defined frontend architecture guidelines and reusable patterns across business units."
     ],
     "location": "Madrid, Spain",
     "url": "https://solera.com",
@@ -18,9 +20,10 @@
       "TypeScript",
       "React",
       "Web Components",
-      "Auth0",
+      "Lit",
+      "Design Systems",
       "HTML/CSS",
-      "NPM"
+      ".NET"
     ]
   },
   {
@@ -29,63 +32,71 @@
     "startDate": "2024-07-01T00:00:00+00:00",
     "endDate": "2024-10-01T00:00:00+00:00",
     "goals": [
-      "Partnered with CRO and frontend teams to optimize Shopify and WordPress-based eCommerce sites for conversion and performance.",
-      "Achieved up to 90% improvement in key conversion KPIs through targeted frontend performance enhancements.",
-      "Delivered cross-platform UI improvements using Astro and modern JavaScript techniques, improving both load times and user experience."
+      "Implemented A/B tests and custom dynamic Shopify components for the agency's CRO flows, across 10+ eCommerce clients (the agency offered clients up to 90% more sales).",
+      "Migrated the agency's own website from WordPress to Astro for faster load times and quicker page updates."
     ],
     "location": "Copenhagen, Denmark",
     "url": "https://purplefire.io",
     "isRemote": true,
-    "technologies": ["JavaScript", "TypeScript", "React", "Astro", "WordPress", "HTML/CSS"]
+    "technologies": ["JavaScript", "Shopify", "Astro", "WordPress", "HTML/CSS"]
   },
   {
     "site": "Southern Code",
-    "grade": "Senior Frontend Developer",
     "startDate": "2021-12-01T00:00:00+00:00",
     "endDate": "2024-07-01T00:00:00+00:00",
-    "goals": [
-      "Delivered the complete frontend of the Mexican Stock Exchange (BMV) web platform, handling all UI components and feature implementation end to end.",
-      "Promoted and led the adoption of MVVM architecture with SwiftUI for Arlo Security's iOS app, replacing legacy UIKit patterns and achieving a 40% improvement in load time and perceived performance.",
-      "Designed core architectural patterns for 3Sixty's eCommerce platform as Senior Frontend Developer: microfrontend architecture with Next.js, a Factory pattern for dynamic multi-client payment gateway configuration, and Clean Architecture for scalable domain separation.",
-      "Drove frontend architecture decisions across multiple concurrent projects and mentored 3 junior and mid-level developers."
-    ],
     "location": "Cordoba, Argentina",
     "url": "https://southerncode.us",
     "isRemote": true,
     "technologies": [
-      "JavaScript",
       "TypeScript",
-      "Next.js",
       "Angular",
-      "Python",
+      "RxJS",
+      "Next.js",
       "Swift",
-      "Azure",
-      "Docker"
+      "SwiftUI",
+      "Microfrontends",
+      "Clean Architecture"
+    ],
+    "roles": [
+      {
+        "grade": "Senior Frontend Developer, 3Sixty",
+        "startDate": "2022-10-01T00:00:00+00:00",
+        "endDate": "2024-07-01T00:00:00+00:00",
+        "goals": [
+          "Proposed a Next.js monorepo of microfrontends for 3Sixty's B2B room-booking platform, so booking, checkout and search deploy independently and share components.",
+          "Proposed a Factory pattern for checkout: one URL for every payment variation, with lazy-loaded steps by role, hotel or client configuration.",
+          "Applied Clean Architecture progressively, drove frontend architecture decisions across concurrent projects and mentored 3 junior and mid-level developers."
+        ]
+      },
+      {
+        "grade": "iOS Developer, Arlo Security",
+        "startDate": "2022-06-01T00:00:00+00:00",
+        "endDate": "2022-09-01T00:00:00+00:00",
+        "goals": [
+          "Joined as an emergency developer, fixed QA bugs, and proposed and prototyped MVVM with SwiftUI to remove slowness from duplicated API calls between screens.",
+          "Arlo's team implemented it, and time to a useful screen dropped from over 10 seconds to about 5."
+        ]
+      },
+      {
+        "grade": "Mid-Senior Frontend Developer, Mexican Stock Exchange (BMV)",
+        "startDate": "2021-12-01T00:00:00+00:00",
+        "endDate": "2022-05-01T00:00:00+00:00",
+        "goals": [
+          "Defined the architecture with the tech lead and built the entire frontend of a platform for buying government bonds, from scratch in about 6 months.",
+          "Angular with Clean Architecture, RxJS, and WebSockets plus Server-Sent Events for live prices."
+        ]
+      }
     ]
   },
   {
-    "site": "IbisDev",
-    "grade": "Cross Platform Developer",
-    "startDate": "2021-10-01T00:00:00+00:00",
-    "endDate": "2022-01-01T00:00:00+00:00",
-    "goals": [
-      "Built and enhanced a responsive, secure checkout UI for both iOS and Android platforms, integrating Stripe payment flows.",
-      "Optimized cross-platform performance and UX consistency across iOS and Android devices."
-    ],
-    "location": "Paris, France",
-    "url": "https://www.ibisdev.tech/",
-    "isRemote": true,
-    "technologies": ["JavaScript", "TypeScript", "React Native", "Stripe", "Swift", "Android"]
-  },
-  {
     "site": "BrickControl",
-    "grade": "Senior Frontend Developer",
+    "grade": "Mid-Senior Frontend Developer",
     "startDate": "2020-01-01T00:00:00+00:00",
     "endDate": "2021-12-01T00:00:00+00:00",
     "goals": [
-      "Led a frontend team of 6 engineers through a full migration from a legacy system to Angular, managing technical coordination and delivery end to end.",
-      "Developed a custom Angular RouterModule extension enabling stateful tab-based navigation, a critical product requirement not supported natively.",
-      "Defined the frontend architecture and established scalable delivery processes adopted across the team."
+      "Joined as a Mid-Senior frontend developer for the phased Silverlight to Angular migration of a construction CRM, and grew into the lead of a frontend team of 6, managing technical coordination and delivery.",
+      "Built a custom Angular RouterModule extension that reproduces Silverlight's browser-tab-like navigation, keeping each screen's state in memory.",
+      "Defined the frontend architecture and established component standards, documentation and CI adopted across the team."
     ],
     "location": "Madrid, Spain",
     "url": "https://www.brickcontrol.com/es/",
@@ -93,41 +104,32 @@
     "technologies": ["Angular", "TypeScript", "RxJS"]
   },
   {
-    "site": "Qubithat",
-    "grade": "Software Developer",
-    "startDate": "2020-06-01T00:00:00+00:00",
-    "endDate": "2020-07-01T00:00:00+00:00",
-    "goals": [
-      "Developed features across multiple products: Yama Club, Diri, PilloFON, and Space Móvil.",
-      "Boosted application performance by 22% through targeted architectural improvements.",
-      "Designed and built a real-time reservation system for Yama Club, integrated with IoT-based door access control."
-    ],
-    "location": "Bogota, Colombia",
-    "url": null,
-    "isRemote": true,
-    "technologies": [
-      "TypeScript",
-      "React",
-      "Node.js",
-      "React Native",
-      "Flutter",
-      "Android",
-      "Swift"
-    ]
-  },
-  {
-    "site": "CADI F1",
-    "grade": "Full Stack Developer",
+    "site": "CADI F1 Academia de Software",
     "startDate": "2018-09-01T00:00:00+00:00",
     "endDate": "2019-12-01T00:00:00+00:00",
-    "goals": [
-      "Started as Frontend Developer and was promoted to team lead, managing a team of 5 across web, mobile, and desktop platforms.",
-      "Led the architecture and end-to-end development of a KPI dashboard system for SMEs, covering web, iOS, Android, and desktop targets.",
-      "Designed system architecture and coordinated all team activities from requirements through delivery."
-    ],
     "location": "Barquisimeto, Venezuela",
     "url": null,
     "isRemote": false,
-    "technologies": ["TypeScript", "Angular", "Ionic", "PHP", "ElectronJS"]
+    "technologies": ["TypeScript", "Angular", "Ionic", "PHP", "ElectronJS"],
+    "roles": [
+      {
+        "grade": "Team Lead",
+        "startDate": "2019-10-01T00:00:00+00:00",
+        "endDate": "2019-12-01T00:00:00+00:00",
+        "goals": [
+          "Took over the lead of 5 developers on KPImetro after about a year on the product, coordinating the team and its agile practices."
+        ]
+      },
+      {
+        "grade": "Full Stack Developer",
+        "startDate": "2018-09-01T00:00:00+00:00",
+        "endDate": "2019-09-01T00:00:00+00:00",
+        "goals": [
+          "First developer on KPImetro, a KPI dashboard platform for SMEs (web, Ionic mobile, Electron desktop, PHP/MySQL backend).",
+          "Initiated and built the shared Angular NPM package holding backend connection, business logic and state management for every client app.",
+          "Also taught PHP, JavaScript, Angular and REST at the academy (Nov 2018 to Aug 2019)."
+        ]
+      }
+    ]
   }
 ]
