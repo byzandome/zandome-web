@@ -17,13 +17,19 @@ const { title, company, role, period, summary, highlights, technologies } = Astr
 <article class="flex flex-col gap-y-3 rounded-lg border border-white/10 p-5">
   <header class="flex flex-col gap-y-1">
     <h2 class="text-xl font-bold">{title}</h2>
-    <p class="text-sm text-indigo-400">{company} · {role} · {period}</p>
+    <p class="text-sm text-indigo-400">
+      {company} · {role} · {period}
+    </p>
   </header>
   <p class="text-base text-neutral-300">{summary}</p>
   <ul class="list-disc pl-5 text-base text-neutral-400">
-    {highlights.map((highlight) => <li>{highlight}</li>)}
+    {highlights.map((highlight) => (
+      <li>{highlight}</li>
+    ))}
   </ul>
   <div>
-    {technologies.map((technology) => <Skill technology={technology} />)}
+    {technologies.map((technology) => (
+      <Skill technology={technology} />
+    ))}
   </div>
 </article>

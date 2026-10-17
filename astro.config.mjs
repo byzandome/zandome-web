@@ -16,7 +16,7 @@ export default defineConfig({
   site: 'https://zandome.dev',
   integrations: [
     partytown({ config: { forward: ['dataLayer.push', 'gtag'] } }),
-    react(),
+    react({ compiler: true }),
     sitemap(),
     playformCompress(),
     icon(),

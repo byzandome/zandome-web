@@ -74,14 +74,12 @@ const roles = experience.roles ?? [];
   <header class="flex flex-col justify-between gap-x-2 md:flex-row md:items-center print:flex-row">
     <div class="flex flex-col">
       <span class="text-base font-bold print:text-cv-body">{experience.site}</span>
-      {
-        experience.grade && (
-          <h6 class="text-base print:text-cv-body">
-            {experience.grade}
-            <br />
-          </h6>
-        )
-      }
+      {experience.grade && (
+        <h6 class="text-base print:text-cv-body">
+          {experience.grade}
+          <br />
+        </h6>
+      )}
     </div>
 
     <div class="flex flex-col md:items-end print:items-end">
@@ -89,51 +87,45 @@ const roles = experience.roles ?? [];
         {experience.location ? experience.location : ''}
         <span class="font-bold italic not-print:text-indigo-400 print:hidden">({placeWork})</span>
       </span>
-      {
-        (startDateLocaleString || endDateLocaleString) && (
-          <span class="text-base text-nowrap print:text-cv-body">
-            {startDateLocaleString}
-            {startDateLocaleString && endDateLocaleString && '-'}
-            {endDateLocaleString}
-          </span>
-        )
-      }
+      {(startDateLocaleString || endDateLocaleString) && (
+        <span class="text-base text-nowrap print:text-cv-body">
+          {startDateLocaleString}
+          {startDateLocaleString && endDateLocaleString && '-'}
+          {endDateLocaleString}
+        </span>
+      )}
     </div>
   </header>
-  {
-    roles.length > 0 ? (
-      <div class="mt-1 flex flex-col gap-y-2 print:gap-y-1">
-        {roles.map((role) => (
-          <section>
-            <div class="flex flex-col justify-between gap-x-2 md:flex-row print:flex-row">
-              <h6 class="text-base font-semibold print:text-cv-body">{role.grade}</h6>
-              <span class="text-base text-nowrap not-print:text-neutral-400 print:text-cv-body">
-                {getRoleRange(role)}
-              </span>
-            </div>
-            <ul class="list-disc px-8 text-base not-print:text-neutral-400 print:text-cv-body">
-              {role.goals.map((goal) => (
-                <li>{goal}</li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </div>
-    ) : (
-      <div class="mt-2 text-base not-print:text-neutral-400 print:text-cv-body">
-        <ul class="list-disc px-8 text-base print:text-cv-body">
-          {experience.goals && experience.goals.map((goal) => <li>{goal}</li>)}
-        </ul>
-      </div>
-    )
-  }
-  {
-    experience.technologies && (
-      <div class="mt-2">
-        {experience.technologies.sort().map((tech) => (
-          <Skill technology={tech} />
-        ))}
-      </div>
-    )
-  }
+  {roles.length > 0 ? (
+    <div class="mt-1 flex flex-col gap-y-2 print:gap-y-1">
+      {roles.map((role) => (
+        <section>
+          <div class="flex flex-col justify-between gap-x-2 md:flex-row print:flex-row">
+            <h6 class="text-base font-semibold print:text-cv-body">{role.grade}</h6>
+            <span class="text-base text-nowrap not-print:text-neutral-400 print:text-cv-body">
+              {getRoleRange(role)}
+            </span>
+          </div>
+          <ul class="list-disc px-8 text-base not-print:text-neutral-400 print:text-cv-body">
+            {role.goals.map((goal) => (
+              <li>{goal}</li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  ) : (
+    <div class="mt-2 text-base not-print:text-neutral-400 print:text-cv-body">
+      <ul class="list-disc px-8 text-base print:text-cv-body">
+        {experience.goals && experience.goals.map((goal) => <li>{goal}</li>)}
+      </ul>
+    </div>
+  )}
+  {experience.technologies && (
+    <div class="mt-2">
+      {experience.technologies.sort().map((tech) => (
+        <Skill technology={tech} />
+      ))}
+    </div>
+  )}
 </article>

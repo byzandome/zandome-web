@@ -18,19 +18,15 @@ const { category, items } = Astro.props;
 ---
 
 <div class="flex flex-col gap-y-2 rounded-lg border border-gray-700 p-4">
-  <h2 class="text-sm font-semibold tracking-wide text-indigo-400 uppercase">
-    {category}
-  </h2>
+  <h2 class="text-sm font-semibold tracking-wide text-indigo-400 uppercase">{category}</h2>
   <ul class="flex flex-col gap-y-1">
-    {
-      items.map((cert) => (
-        <CertificateItem
-          name={cert.name}
-          platform={cert.platform}
-          file={cert.file}
-          urlId={cert.url}
-        />
-      ))
-    }
+    {items.map((cert) => (
+      <CertificateItem
+        name={cert.name}
+        platform={cert.platform}
+        file={cert.file}
+        urlId={cert.url}
+      />
+    ))}
   </ul>
 </div>

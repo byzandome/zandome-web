@@ -16,11 +16,9 @@ const totalCerts = AllCertificates.reduce((acc, group) => acc + group.items.leng
     </div>
 
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-      {
-        AllCertificates.map((group) => (
-          <CertificateGroup category={group.category} items={group.items} />
-        ))
-      }
+      {AllCertificates.map((group) => (
+        <CertificateGroup category={group.category} items={group.items} />
+      ))}
     </div>
   </div>
 </Layout>

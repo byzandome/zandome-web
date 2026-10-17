@@ -13,7 +13,9 @@ import Layout from '@/layouts/Base.astro';
       </p>
     </div>
     <div class="grid grid-cols-1 gap-6">
-      {Projects.map((project) => <ProjectCard {...project} />)}
+      {Projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
     </div>
   </div>
 </Layout>
