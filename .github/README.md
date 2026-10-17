@@ -1,158 +1,171 @@
 # GitHub Actions Workflows
 
+## Overview
+
+This project uses GitHub Actions for automated CI/CD. Version management is handled by **Changesets**, which provides a structured way to track, changelog, and release changes.
+
 ## Workflows
 
 ### CI Workflow (`ci.yml`)
+
 Runs on every push and pull request to validate code quality and build.
 
 **Jobs:**
+- **Changeset Check**: For PRs to `main`, warns if no changeset is included (non-blocking)
 - **Lint and Format**: Checks code formatting with Prettier and linting with ESLint
 - **Build**: Builds the Astro application
 
 ### Release Workflow (`release.yml`)
-Automatically manages version bumping and tagging when release PRs are merged to main.
+
+Automatically manages version bumping, changelog updates, and git tags.
 
 **Triggers:**
-- PR from `release/*` branch merged to `main`
+- Push to `main` branch (runs after PRs are merged)
 
 **Automated Steps:**
-1. Extracts version from branch name (e.g., `release/1.2.0` → `1.2.0`)
-2. Updates `package.json` version field
-3. Commits version change to `main`
-4. Creates and pushes git tag (e.g., `v1.2.0`)
-5. Triggers the deploy workflow automatically
-
-**Branch Naming Convention:**
-- ✅ Valid: `release/1.0.0`, `release/1.2.3`, `release/2.0.0`
-- ❌ Invalid: `release/v1.0.0`, `release/1.0`, `releases/1.0.0`
+1. Detects changesets created during development
+2. Opens/updates a "Version Packages" PR with:
+   - Updated `package.json` version
+   - Updated `CHANGELOG.md` with release notes
+3. When the "Version Packages" PR is merged:
+   - Creates git tag (e.g., `v1.3.1`)
+   - Creates GitHub Release with changelog
+   - Triggers deploy workflow
 
 ### Deploy Workflow (`deploy.yml`)
-Builds and pushes Docker images to the private registry at `registry.zandome.dev`.
+
+Builds and deploys to GitHub Pages on every push to `main`.
 
 **Triggers:**
 - Push to `main` branch
 - Manual workflow dispatch
-- Git tags matching `v*` (automatically triggered by release workflow)
 
-**Image Tags:**
-- `{version}` - From package.json (e.g., `1.1.1`)
-- `latest` - For all main branch pushes
-- `{tag}` - Git tag name (e.g., `v1.1.1`)
-- `main-{sha}` - Main branch with short commit SHA
-
-## Required GitHub Secrets
-
-To use the deploy workflow, you need to configure these secrets in your GitHub repository:
-
-1. Go to **Settings** → **Secrets and variables** → **Actions**
-2. Add the following repository secrets:
-
-| Secret Name | Description | Example |
-|-------------|-------------|---------|
-| `REGISTRY_USERNAME` | Username for registry.zandome.dev | `your-username` |
-| `REGISTRY_PASSWORD` | Password or token for registry.zandome.dev | `your-password` |
+**Deployment:**
+- Static site deployed to https://zandome.dev
+- Footer shows version from `package.json`
 
 ## Release Process
 
 ### Creating a New Release
 
-**1. Create a release branch:**
+**1. Create a feature branch and make your changes:**
 ```bash
-git checkout -b release/1.2.0
+git checkout -b feat/my-feature
+# make changes, commit, test locally
 ```
 
-**2. Make your changes, commit, and push:**
+**2. Add a changeset before creating a PR:**
 ```bash
-git add .
-git commit -m "feat: add new feature"
-git push origin release/1.2.0
+bun run changeset
 ```
+
+This interactive command asks you to:
+- Select which packages are affected (in this case, just `zandome-web`)
+- Choose the type of change:
+  - `patch` (1.3.0 → 1.3.1): bugfixes, minor changes
+  - `minor` (1.3.0 → 1.4.0): new features
+  - `major` (1.3.0 → 2.0.0): breaking changes
+- Write a brief description of the change
+
+This creates a file in `.changeset/` that you should commit.
 
 **3. Create a Pull Request:**
-- **Base:** `main`
-- **Compare:** `release/1.2.0`
-- **Title:** "Release v1.2.0"
+- Base: `main`
+- Include the `.changeset/*.md` file(s) in your commit
 
-**4. Merge the PR** (after CI passes and reviews are approved)
+**4. Code review and approval:**
+- CI runs automatically
+- Address feedback if any
+- Get approval
 
-**5. Automation kicks in:**
-- ✅ Release workflow extracts version `1.2.0` from branch name
-- ✅ Updates `package.json` to version `1.2.0`
-- ✅ Commits to `main`: `chore: bump version to 1.2.0`
-- ✅ Creates git tag `v1.2.0`
-- ✅ Deploy workflow automatically triggers
-- ✅ Docker images are built and pushed:
-  - `registry.zandome.dev/zandome-web:1.2.0`
-  - `registry.zandome.dev/zandome-web:v1.2.0`
-  - `registry.zandome.dev/zandome-web:latest`
-  - `registry.zandome.dev/zandome-web:main-abc1234`
+**5. Merge the PR to `main`:**
+- Use squash or rebase to maintain linear history
 
-### Direct Push to Main
-When you push directly to `main` (not recommended for releases), the deploy workflow will create:
-- `registry.zandome.dev/zandome-web:{current-version}` (from package.json)
-- `registry.zandome.dev/zandome-web:latest`
-- `registry.zandome.dev/zandome-web:main-abc1234` (short commit SHA)
+**6. Automation takes over:**
+- Release workflow detects changesets
+- Opens a "Version Packages" PR automatically
+- PR shows:
+  - New version in `package.json`
+  - Updated `CHANGELOG.md`
+  - Release notes from changesets
+- Review and merge the "Version Packages" PR
 
-### Other Branches
-- Release branches (`release/*`): CI runs, but no deployment until merged to main
-- Feature/development branches: Only CI runs, no deployment
+**7. Final automation:**
+- Git tag `vX.Y.Z` is created
+- GitHub Release is published
+- Deploy workflow builds and deploys to GitHub Pages
+- Version in site footer updates automatically
 
-## Pulling Images
+## Changeset Management
+
+### View Pending Changes
 
 ```bash
-# Pull the latest production image
-docker pull registry.zandome.dev/zandome-web:latest
-
-# Pull a specific version
-docker pull registry.zandome.dev/zandome-web:1.1.1
-
-# Pull a specific commit
-docker pull registry.zandome.dev/zandome-web:main-abc1234
+bun run changeset status
 ```
 
-## Local Testing
+Shows all unreleased changesets and the projected new version.
 
-To test the Docker build locally:
+### Example Changeset Workflow
 
 ```bash
-# Build the image
-docker build -t zandome-web:local .
+# Make your changes
+git checkout -b feat/add-projects-page
+# ... make changes ...
 
-# Run the container
-docker run -p 8080:80 zandome-web:local
+# Add a changeset
+bun run changeset
+# Follow the prompts:
+# → Select affected packages
+# → Choose: patch / minor / major
+# → Write description: "Add new projects section"
 
-# Access at http://localhost:8080
+# Commit everything including the .changeset/ file
+git add .
+git commit -m "feat: add projects section"
+
+# Push and create PR
+git push origin feat/add-projects-page
+
+# Once merged to main:
+# → Release workflow creates "Version Packages" PR
+# → Merge that PR
+# → Git tag and GitHub Release created
+# → Deploy to production
 ```
 
 ## Important Notes
 
 ### Version Management
-- **Source of Truth**: The release branch name (`release/x.x.x`) is the source of truth for versioning
-- **No Manual Version Updates**: Never manually update the version in `package.json` - the release workflow handles this automatically
-- **Semantic Versioning**: Always use semantic versioning format: `MAJOR.MINOR.PATCH` (e.g., `1.2.0`)
+
+- **Source of Truth**: Changesets in `.changeset/` files
+- **Automated Bumping**: Never manually update `package.json` version—changesets handles this
+- **Semantic Versioning**: Follows MAJOR.MINOR.PATCH (e.g., `1.3.1`)
 
 ### Branch Protection
-It's recommended to protect the `main` branch:
-1. Go to **Settings** → **Branches** → **Branch protection rules**
-2. Add rule for `main`:
-   - Require pull request reviews before merging
-   - Require status checks to pass (CI workflow)
-   - Do not allow force pushes
-   - Do not allow deletions
+
+The `main` branch is protected:
+- Requires linear history (squash/rebase merges)
+- Force pushes and deletions are blocked
+- Changes only through PRs
 
 ### Troubleshooting
 
-**Release workflow didn't run:**
-- Verify the PR was merged (not just closed)
-- Check the branch name matches `release/x.x.x` format
-- Ensure the PR target was the `main` branch
+**"Version Packages" PR didn't appear:**
+- Ensure your feature PR included `.changeset/*.md` file(s)
+- Verify PR was merged (not just closed)
+- Check the Release workflow logs in Actions tab
 
-**Invalid version format error:**
-- Branch must be named `release/1.2.3` (numbers only, no 'v' prefix)
-- Version must have exactly three parts: MAJOR.MINOR.PATCH
-- Each part must be a number
+**Changeset check failed in CI:**
+- Run `bun run changeset` to create one
+- Include the generated `.changeset/*.md` file in your PR
 
-**Docker images not created:**
-- Check that the deploy workflow was triggered by the git tag
-- Verify GitHub secrets `REGISTRY_USERNAME` and `REGISTRY_PASSWORD` are configured
-- Check the Actions tab for deployment workflow logs
+**Version bump didn't happen:**
+- Confirm the "Version Packages" PR was merged to `main`
+- Check the Release workflow logs
+
+## Links
+
+- [Changesets Documentation](https://github.com/changesets/changesets)
+- [Semantic Versioning](https://semver.org/)
+- [GitHub Pages Deployment](https://docs.github.com/en/pages)
