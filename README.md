@@ -34,14 +34,14 @@ bun run start
 
 ## Commands
 
-| Command               | Action                                     |
-| :-------------------- | :----------------------------------------- |
-| `bun run start`       | Start local dev server at `localhost:4321` |
-| `bun run build`       | Build production site to `./dist/`         |
-| `bun run preview`     | Preview production build locally           |
-| `bun run lint`        | Run ESLint                                 |
-| `bun run format`      | Check formatting with Prettier             |
-| `bun run changeset`   | Create a new changeset for release         |
+| Command                    | Action                                     |
+| :------------------------- | :----------------------------------------- |
+| `bun run start`            | Start local dev server at `localhost:4321` |
+| `bun run build`            | Build production site to `./dist/`         |
+| `bun run preview`          | Preview production build locally           |
+| `bun run lint`             | Run ESLint                                 |
+| `bun run format`           | Check formatting with Prettier             |
+| `bun run changeset`        | Create a new changeset for release         |
 | `bun run changeset status` | View pending changes and projected version |
 
 ## Project Structure
@@ -63,11 +63,11 @@ bun run start
 
 ## CI/CD
 
-| Workflow     | Trigger        | Description                                |
-| :----------- | :------------- | :------------------------------------------ |
-| `ci.yml`     | Push / PR      | Lint, format check, and build              |
-| `release.yml`| Push to `main` | Create version PR, tag, and GitHub Release |
-| `deploy.yml` | Push to `main` | Docker build + deploy to GitHub Pages      |
+| Workflow      | Trigger        | Description                                |
+| :------------ | :------------- | :----------------------------------------- |
+| `ci.yml`      | Push / PR      | Lint, format check, and build              |
+| `release.yml` | Push to `main` | Create version PR, tag, and GitHub Release |
+| `deploy.yml`  | Push to `main` | Docker build + deploy to GitHub Pages      |
 
 The deploy workflow builds the site inside Docker (which handles Chromium for PDF generation), extracts the `dist/` folder, and publishes it to GitHub Pages.
 
