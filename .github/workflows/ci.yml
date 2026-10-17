@@ -23,11 +23,11 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
       - name: Setup Bun environment
-        uses: oven-sh/setup-bun@v2.0.2
+        uses: oven-sh/setup-bun@v2.2.0
         with:
           bun-version: 1.4.3
       - name: Install dependencies
@@ -44,9 +44,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@v7.0.1
       - name: Setup Bun environment
-        uses: oven-sh/setup-bun@v2.0.2
+        uses: oven-sh/setup-bun@v2.2.0
         with:
           bun-version: 1.4.3
       - name: Install dependencies
@@ -65,9 +65,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@v7.0.1
       - name: Setup Bun environment
-        uses: oven-sh/setup-bun@v2.0.2
+        uses: oven-sh/setup-bun@v2.2.0
         with:
           bun-version: 1.4.3
       - name: Install dependencies
