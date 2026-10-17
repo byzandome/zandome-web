@@ -45,12 +45,12 @@ jobs:
           publish-script: bun run release
           create-github-releases: true
           github-token: ${{ steps.app-token.outputs.token }}
-          pr-title: "chore(release): version packages"
-          commit-message: "chore(release): version packages"
+          pr-title: "release: version packages"
+          commit-message: "release: version packages"
 
       - name: Set version in release PR title
         if: steps.changesets.outputs.hasChangesets == 'true'
-        run: gh pr edit "${{ steps.changesets.outputs.pullRequestNumber }}" --title "chore(release): v$(jq -r .version package.json)"
+        run: gh pr edit "${{ steps.changesets.outputs.pullRequestNumber }}" --title "release: v$(jq -r .version package.json)"
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
 
