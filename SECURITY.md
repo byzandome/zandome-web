@@ -7,6 +7,7 @@ If you discover a security vulnerability in this project, please report it respo
 ### What to Include
 
 Please provide the following information:
+
 - Description of the vulnerability
 - Steps to reproduce the issue (if applicable)
 - Potential impact of the vulnerability
@@ -23,18 +24,21 @@ Please provide the following information:
 This project follows security best practices:
 
 ### Code Quality
+
 - ✅ Automated linting with ESLint
 - ✅ Code formatting with Prettier
 - ✅ GitHub code scanning (CodeQL)
 - ✅ Dependency updates and monitoring
 
 ### CI/CD Security
+
 - ✅ Explicit workflow permissions (principle of least privilege)
 - ✅ Protected `main` branch with required status checks
 - ✅ Linear git history (no merge commits)
 - ✅ Automated testing on all PRs
 
 ### Dependency Management
+
 - ✅ Pinned dependency versions
 - ✅ Regular security updates
 - ✅ Lock files tracked in version control
@@ -42,11 +46,13 @@ This project follows security best practices:
 ### Workflow Permissions
 
 All GitHub Actions workflows follow the principle of least privilege:
+
 - `ci.yml`: Read-only access to repository
 - `release.yml`: Write access limited to contents and pull requests
 - `deploy.yml`: Specific permissions for GitHub Pages deployment
 
 ### Secrets Management
+
 - ✅ GitHub Secrets used for sensitive configuration
 - ✅ Never committed to the repository
 - ✅ Accessed only when needed in workflows
@@ -55,18 +61,20 @@ All GitHub Actions workflows follow the principle of least privilege:
 
 This is a single-package project (portfolio website). Security updates are applied to the `main` branch as soon as they're discovered and verified.
 
-| Version | Status           |
-| ------- | ---------------- |
+| Version | Status                |
+| ------- | --------------------- |
 | Latest  | ✅ Actively supported |
 
 ## Dependencies
 
 ### Production Dependencies
+
 - Astro 5+ - Static site generator
 - React 19+ - UI framework
 - Tailwind CSS 4+ - Utility-first CSS
 
 ### Development Dependencies
+
 - TypeScript - Type safety
 - ESLint - Code quality
 - Prettier - Code formatting
