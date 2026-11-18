@@ -84,6 +84,14 @@ Use `patch` for fixes and dependency updates, `minor` for features. Never edit `
 - `main` is protected with linear history and required checks: use feature branches and PRs, no merge commits.
 - Do not add Claude/Anthropic attribution to commits.
 
+## Pull requests
+
+- Write the title and description in English.
+- Base the description on `.github/pull_request_template.md`.
+- Do not add "Generated with Claude" or any Claude/Anthropic attribution to the description.
+- Always assign the PR to the user: `gh pr create --assignee @me`.
+- Target `main`; include a changeset when required (see above).
+
 ## Dependencies and security
 
 - Dependency versions are pinned exactly (a few use `^`). Update with `bun update` / `bun run deps:update`, then run the build.
