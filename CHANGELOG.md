@@ -1,5 +1,11 @@
 # zandome-web
 
+## 1.5.1
+
+### Patch Changes
+
+- [#18](https://github.com/byzandome/zandome-web/pull/18) [`4ece8a9`](https://github.com/byzandome/zandome-web/commit/4ece8a9b9622ee5601cecfa064078b390caa7182) Thanks [@byzandome](https://github.com/byzandome)! - Fix dependency vulnerabilities: bump astro to 7.4.7 and add overrides for sharp, svgo and deepmerge-ts.
+
 ## 1.5.0
 
 ### Minor Changes
