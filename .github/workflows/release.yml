@@ -47,9 +47,3 @@ jobs:
           gh pr edit "${{ steps.changesets.outputs.pr-number }}" --title "release: v$(jq -r .version package.json)"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Enable auto-merge on release PR
-        if: steps.changesets.outputs.has-changesets == 'true' && steps.changesets.outputs.pr-number != ''
-        run: gh pr merge "${{ steps.changesets.outputs.pr-number }}" --auto --squash
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
