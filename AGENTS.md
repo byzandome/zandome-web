@@ -59,7 +59,7 @@ Hosted on **GitHub Pages** at https://zandome.dev (custom domain via `public/CNA
 
 - `ci.yml` (push to `main`, PRs): changeset check (non-blocking, PRs to `main` only), then lint + format + typecheck, then build.
 - `codeql.yml`: CodeQL for `actions` and `javascript-typescript` on push/PR to `main` and weekly.
-- `release.yml`: on push to `main`, the Changesets action (using a GitHub App token) opens/updates a "Version Packages" PR titled `release: vX.Y.Z`. Merging it tags the version and creates the GitHub Release, and the deploy runs.
+- `release.yml`: on push to `main`, the Changesets action (using the default `GITHUB_TOKEN`) opens/updates a release PR titled `release: vX.Y.Z`. The release PR must be merged manually by a person (do not enable auto-merge: merges made with `GITHUB_TOKEN` do not trigger other workflows, so the tag, GitHub Release and deploy would never run). Merging it triggers `release.yml` again, which tags the version and creates the GitHub Release, and the deploy runs.
 - Jobs skip PRs from the `changeset-release/main` branch.
 
 ## Releases / changesets
