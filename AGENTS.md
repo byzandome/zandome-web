@@ -87,7 +87,7 @@ Use `patch` for fixes and dependency updates, `minor` for features. Never edit `
 ## Dependencies and security
 
 - Dependency versions are pinned exactly (a few use `^`). Update with `bun update` / `bun run deps:update`, then run the build.
-- `package.json` `overrides` pin patched transitive versions (`sharp`, `svgo`, `deepmerge-ts`) because `@playform/compress` pins old ones. Keep them unless the parent package is upgraded.
+- `package.json` `overrides` pin patched transitive versions (`sharp`, `svgo`, `deepmerge-ts`) because `@playform/compress` pins old ones. Keep them unless the parent package is upgraded. `@emnapi/runtime` is pinned to 1.11.3 because the 2.0 beta pulled in by rolldown breaks `astro check` (`this.bridge.setLastError is not a function`); remove it once that is resolved upstream.
 - Known unresolved audit items: `picomatch` (no patched release yet) and `minimatch` (dev tooling only). Recheck with `bun audit`.
 - Security reports go to miguel@zandome.dev (see `SECURITY.md`).
 
