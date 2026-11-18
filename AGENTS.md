@@ -74,6 +74,8 @@ Every user-facing or dependency change on a PR to `main` needs a changeset in `.
 Short description.
 ```
 
+Do not add empty changesets (`changeset add --empty`) for docs/CI-only PRs: any changeset file on `main` stops `changesets/action` from publishing the tag and GitHub Release for a merged release PR. The changeset check in CI is non-blocking.
+
 Use `patch` for fixes and dependency updates, `minor` for features. Never edit `CHANGELOG.md` or the `package.json` version by hand; the release workflow does it.
 
 ## Commits and branches
