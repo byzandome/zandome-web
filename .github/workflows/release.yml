@@ -30,13 +30,6 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Generate GitHub App Token
-        id: app-token
-        uses: actions/create-github-app-token@v3.3.0
-        with:
-          app-id: ${{ secrets.CHANGESETS_APP_ID }}
-          private-key: ${{ secrets.CHANGESETS_PRIVATE_KEY }}
-
       - name: Create Release PR or Publish
         id: changesets
         uses: changesets/action@v2.1.2
@@ -44,7 +37,7 @@ jobs:
           version-script: bun run version
           publish-script: bun run release
           create-github-releases: true
-          github-token: ${{ steps.app-token.outputs.token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           pr-title: "release: version packages"
           commit-message: "release: version packages"
 
@@ -53,10 +46,10 @@ jobs:
         run: |
           gh pr edit "${{ steps.changesets.outputs.pr-number }}" --title "release: v$(jq -r .version package.json)"
         env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Enable auto-merge on release PR
         if: steps.changesets.outputs.has-changesets == 'true' && steps.changesets.outputs.pr-number != ''
         run: gh pr merge "${{ steps.changesets.outputs.pr-number }}" --auto --squash
         env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
