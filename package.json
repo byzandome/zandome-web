@@ -96,6 +96,7 @@
   "overrides": {
     "sharp": "0.35.5",
     "svgo": "4.1.0",
-    "deepmerge-ts": "8.0.2"
+    "deepmerge-ts": "8.0.2",
+    "@emnapi/runtime": "1.11.3"
   }
 }
