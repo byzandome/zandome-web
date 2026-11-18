@@ -32,6 +32,8 @@ bun run start
 | `ANALYTICS_GOOGLE_ID` | Google Analytics measurement ID |
 | `PHONE_NUMBER`        | Contact phone number            |
 
+The release workflow uses the default `GITHUB_TOKEN`; no GitHub App or extra secrets are needed. The repository setting **Allow GitHub Actions to create and approve pull requests** (Settings → Actions → General) must be enabled.
+
 ## Commands
 
 | Command                    | Action                                     |
@@ -63,17 +65,18 @@ bun run start
 
 ## CI/CD
 
-| Workflow      | Trigger        | Description                                |
-| :------------ | :------------- | :----------------------------------------- |
-| `ci.yml`      | Push / PR      | Lint, format check, and build              |
-| `release.yml` | Push to `main` | Create version PR, tag, and GitHub Release |
-| `deploy.yml`  | Push to `main` | Docker build + deploy to GitHub Pages      |
+| Workflow      | Trigger        | Description                              |
+| :------------ | :------------- | :--------------------------------------- |
+| `ci.yml`      | Push / PR      | Lint, format check, typecheck, and build |
+| `codeql.yml`  | Push / PR      | CodeQL code scanning                     |
+| `release.yml` | Push to `main` | Open release PR; tag and GitHub Release  |
+| `deploy.yml`  | Push to `main` | Docker build + deploy to GitHub Pages    |
 
 The deploy workflow builds the site inside Docker (which handles Chromium for PDF generation), extracts the `dist/` folder, and publishes it to GitHub Pages.
 
 ## Releases
 
-This project uses **Changesets** for structured releases. See [`.github/README.md`](./.github/README.md) for the complete release workflow and process.
+This project uses **Changesets** for structured releases. The release PR is opened by the workflow but must be **merged manually**; see [`.github/README.md`](./.github/README.md) for the complete release workflow and process.
 
 ### Required GitHub Secrets
 

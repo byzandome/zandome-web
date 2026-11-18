@@ -12,8 +12,8 @@ Runs on every push and pull request to validate code quality and build.
 
 **Jobs:**
 - **Changeset Check**: For PRs to `main`, warns if no changeset is included (non-blocking)
-- **Lint and Format**: Checks code formatting with Prettier and linting with ESLint
-- **Build**: Builds the Astro application
+- **Lint and Format**: Prettier, ESLint (`--max-warnings 0`) and `astro check`
+- **Build**: Builds the Astro application (including the CV PDF)
 
 ### Release Workflow (`release.yml`)
 
@@ -24,13 +24,16 @@ Automatically manages version bumping, changelog updates, and git tags.
 
 **Automated Steps:**
 1. Detects changesets created during development
-2. Opens/updates a "Version Packages" PR with:
+2. Opens/updates a release PR with:
    - Updated `package.json` version
    - Updated `CHANGELOG.md` with release notes
-3. When the "Version Packages" PR is merged:
+3. Renames the PR to `release: vX.Y.Z`
+4. When the release PR is **merged by a person**, `release.yml` runs again, finds no pending changesets and:
    - Creates git tag (e.g., `v1.3.1`)
    - Creates GitHub Release with changelog
-   - Triggers deploy workflow
+   - The push to `main` also triggers the deploy workflow
+
+**Token:** the workflow uses the default `GITHUB_TOKEN` (no GitHub App). This requires **Settings → Actions → General → Allow GitHub Actions to create and approve pull requests**. Events created with `GITHUB_TOKEN` do not trigger other workflows, so the release PR must not be auto-merged: a merge made by the token would never run the tag/release and deploy workflows.
 
 ### Deploy Workflow (`deploy.yml`)
 
@@ -83,12 +86,12 @@ This creates a file in `.changeset/` that you should commit.
 
 **6. Automation takes over:**
 - Release workflow detects changesets
-- Opens a "Version Packages" PR automatically
+- Opens a release PR automatically (titled `release: vX.Y.Z`)
 - PR shows:
   - New version in `package.json`
   - Updated `CHANGELOG.md`
   - Release notes from changesets
-- Review and merge the "Version Packages" PR
+- Review and **merge the release PR manually** (do not enable auto-merge)
 
 **7. Final automation:**
 - Git tag `vX.Y.Z` is created
@@ -128,8 +131,8 @@ git commit -m "feat: add projects section"
 git push origin feat/add-projects-page
 
 # Once merged to main:
-# → Release workflow creates "Version Packages" PR
-# → Merge that PR
+# → Release workflow creates the release PR (release: vX.Y.Z)
+# → Merge that PR manually
 # → Git tag and GitHub Release created
 # → Deploy to production
 ```
@@ -151,18 +154,25 @@ The `main` branch is protected:
 
 ### Troubleshooting
 
-**"Version Packages" PR didn't appear:**
+**Release PR didn't appear:**
 - Ensure your feature PR included `.changeset/*.md` file(s)
 - Verify PR was merged (not just closed)
 - Check the Release workflow logs in Actions tab
 
 **Changeset check failed in CI:**
-- Run `bun run changeset` to create one
-- Include the generated `.changeset/*.md` file in your PR
+- It is non-blocking. Run `bun run changeset` and include the file if the change is user-facing or a dependency update
+- For docs/CI-only PRs it is fine to leave it failing; do not add an empty changeset
 
 **Version bump didn't happen:**
-- Confirm the "Version Packages" PR was merged to `main`
+- Confirm the release PR was merged to `main`
 - Check the Release workflow logs
+
+**Release PR merged but no tag, GitHub Release or deploy:**
+- It was probably merged by `github-actions` (auto-merge). Merges made with `GITHUB_TOKEN` do not trigger workflows. Merge release PRs manually.
+- If a leftover changeset file (even an empty one) exists on `main`, `changesets/action` will not publish the tag. Do not add empty changesets for docs/CI-only PRs.
+
+**Release workflow shows "workflow file issue":**
+- The YAML is invalid (for example an unquoted `run:` value containing `: `). Use a `|` block for `run` commands.
 
 ## Links
 

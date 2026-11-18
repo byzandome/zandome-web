@@ -48,7 +48,7 @@ This project follows security best practices:
 All GitHub Actions workflows follow the principle of least privilege:
 
 - `ci.yml`: Read-only access to repository
-- `release.yml`: Write access limited to contents and pull requests
+- `release.yml`: Write access limited to contents and pull requests (uses the default `GITHUB_TOKEN`, no GitHub App)
 - `deploy.yml`: Specific permissions for GitHub Pages deployment
 
 ### Secrets Management
