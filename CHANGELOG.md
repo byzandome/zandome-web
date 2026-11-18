@@ -1,5 +1,11 @@
 # zandome-web
 
+## 1.5.2
+
+### Patch Changes
+
+- [#24](https://github.com/byzandome/zandome-web/pull/24) [`5764da4`](https://github.com/byzandome/zandome-web/commit/5764da47ddd9bb83990439388d4a70995ae90f9b) Thanks [@byzandome](https://github.com/byzandome)! - Use the default GITHUB_TOKEN in the release workflow instead of a GitHub App token.
+
 ## 1.5.1
 
 ### Patch Changes
